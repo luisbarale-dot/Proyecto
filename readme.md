@@ -8,7 +8,7 @@
 ### Profesor:
  - Nancy Lopez
 ### Integrantes del Equipo
- - Luis Berale
+ - Luis Barale
  - Guillermo Lescano
  - Gianna Giupponi
  - Federico Carrizo
