@@ -1,4 +1,9 @@
-b# [📌] Objetivos específicos
+<div id="Header" align="Center">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkujDE3VQf2bXl8H3WERYcr95B1F6Y-d2owXYqnkq5dA&s=10" width="100"/>
+</div>
+<br/>
+
+# [📌] Objetivos específicos
 > Proyecto Gestor para practicas de estudiantes, realizado por estudiantes del Profesorado de Informatica Semipresencial 2026
 ### Profesor:
  - Nancy Lopez
