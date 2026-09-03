@@ -12,7 +12,6 @@ LOGGER_NAME = "gestor-practicas"
 
 
 def _crear_logger() -> logging.Logger:
-	"""Configura el logger una sola vez y devuelve su instancia."""
 	logger = logging.getLogger(LOGGER_NAME)
 	logger.setLevel(logging.DEBUG)
 	logger.propagate = False
@@ -47,24 +46,24 @@ logger = _crear_logger()
 
 
 def debug(mensaje: str, *args: object, **kwargs: object) -> None:
-	logger.debug(mensaje, *args, **kwargs)
+	logger.debug("🔍 %s", mensaje, *args, **kwargs)
 
 
 def info(mensaje: str, *args: object, **kwargs: object) -> None:
-	logger.info(mensaje, *args, **kwargs)
+	logger.info("ℹ️ %s", mensaje, *args, **kwargs)
 
 
 def success(mensaje: str, *args: object, **kwargs: object) -> None:
-	logger.info("✓ %s", mensaje, *args, **kwargs)
+	logger.info("✅ %s", mensaje, *args, **kwargs)
 
 
 def warning(mensaje: str, *args: object, **kwargs: object) -> None:
-	logger.warning(mensaje, *args, **kwargs)
+	logger.warning("⚠️ %s", mensaje, *args, **kwargs)
 
 
 def error(mensaje: str, *args: object, **kwargs: object) -> None:
-	logger.error(mensaje, *args, **kwargs)
+	logger.error("❌ %s", mensaje, *args, **kwargs)
 
 
 def exception(mensaje: str, *args: object, **kwargs: object) -> None:
-	logger.exception(mensaje, *args, **kwargs)
+	logger.exception("❌ %s", mensaje, *args, **kwargs)
