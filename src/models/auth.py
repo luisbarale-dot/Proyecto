@@ -1,23 +1,25 @@
 import json
 from pathlib import Path
 
+from src.utils.logs import error
+
 DIR = Path(__file__).resolve().parent.parent
 
-base_Users = DIR / "data" / "usuarios.json"
+ARCHIVO_USERS = DIR / "data" / "usuarios.json"
 
 def cargar_usuarios():
     try:
-        with open(base_Users, "r", encoding="utf-8") as archivo:
+        with open(ARCHIVO_USERS, "r", encoding="utf-8") as archivo:
             datos = json.load(archivo)
 
         return datos["Usuarios"]
 
     except FileNotFoundError:
-        print("No se encontró el archivo usuarios.json")
+        error("No se encontró el archivo usuarios.json")
         return []
 
     except json.JSONDecodeError:
-        print("El archivo usuarios.json tiene un formato incorrecto")
+        error("El archivo usuarios.json tiene un formato incorrecto")
         return []
 
 

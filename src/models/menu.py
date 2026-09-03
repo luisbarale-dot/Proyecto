@@ -2,6 +2,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.prompt import Prompt
 
+from src.utils.logs import success, error
 from src.models.auth import iniciar_sesion
 
 
@@ -47,12 +48,9 @@ def login():
     password = Prompt.ask("Contraseña", password=True)
 
     if iniciar_sesion(username, password):
-        console.print(
-            "\n[bold green]✓ Inicio de sesión exitoso.[/bold green]"
-        )
+        success("Inicio de sesión exitoso.")
     else:
-        console.print(
-            "\n[bold red]✗ Usuario o contraseña incorrectos.[/bold red]"
-        )
+        error("Usuario o contraseña incorrectos.")
+
 
     console.input("\nPresione ENTER para continuar...")
