@@ -15,7 +15,7 @@ class Tutor(user):
         self.registro_asistencia = True
 
     def Asistencia(self):
-        if Estudiante.asistencia == True:
+        if super().asistencia == True:
             return self.registro_asistencia
         else:
             return self.registro_asistencia = False
