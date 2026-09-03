@@ -88,3 +88,5 @@
 | En Proceso | Actualizacion 2/09/26 |
 | Estructura basica del proyecto | ✅ |
 | Json Schemas | ⭕ |
+| Autenticacion de usuarios basica| ✅ |
+| Sistema de logs| 🕐 |
