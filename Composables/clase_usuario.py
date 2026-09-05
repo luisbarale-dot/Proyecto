@@ -1,19 +1,19 @@
 class Usuario:
     def __init__(self, nombre, apellido, cedula, especialidad):
-        self.nombre = nombre -> str
-        self.apellido = apellido -> str
-        self.cedula = cedula -> int
-        self.especialidad = especialidad -> str
+        self.nombre = nombre
+        self.apellido = apellido
+        self.cedula = cedula
+        self.especialidad = especialidad
 
 class Estudiante(Usuario):
     def __init__(self, nombre, apellido, cedula, especialidad, año):
         super().__init__(nombre, apellido, cedula, especialidad)
-        self.año = año -> int
+        self.año = año
 
 class Adscriptor(Usuario):
     def __init__(self, nombre, apellido, cedula, especialidad):
         super().__init__(nombre, apellido, cedula, especialidad)
-        self.__disponible = True -> bool      #Para corroborar la disponibilidad.
+        self.__disponible = True    #Para corroborar la disponibilidad.
 
     def es_disponible(self):
         return self.__disponible   #Debe consultarse la disponibilidad del adscriptor
@@ -24,7 +24,7 @@ class Adscriptor(Usuario):
 class Tutor(Usuario):   #Se entiende por "Tutor" el docente de didáctica.
     def __init__(self, nombre, apellido, cedula, especialidad):
         super().__init__(nombre, apellido, cedula, especialidad, anno)
-        self.anno = anno -> int
+        self.anno = anno 
 
     def visita_practica(self):
         pass
