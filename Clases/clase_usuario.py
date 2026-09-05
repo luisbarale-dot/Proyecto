@@ -6,25 +6,21 @@ class Usuario:
         self.especialidad = especialidad
 
 class Estudiante(Usuario):
-    def __init__(self, nombre, apellido, cedula, especialidad, año):
+    def __init__(self, nombre, apellido, cedula, especialidad, anio):
         super().__init__(nombre, apellido, cedula, especialidad)
-        self.año = año
+        self.año = anio
+        self.asistencia = 0 #luego se usará para contar asistencia
+        self.calificaciones = 0 #idem
 
 class Adscriptor(Usuario):
     def __init__(self, nombre, apellido, cedula, especialidad):
         super().__init__(nombre, apellido, cedula, especialidad)
         self.__disponible = True    #Para corroborar la disponibilidad.
 
-    def es_disponible(self):
-        return self.__disponible   #Debe consultarse la disponibilidad del adscriptor
-
-    def asistencia_practicante(self):
-        pass #debe registrarse el control de asistencia del estudiante.
-
 class Tutor(Usuario):   #Se entiende por "Tutor" el docente de didáctica.
-    def __init__(self, nombre, apellido, cedula, especialidad):
-        super().__init__(nombre, apellido, cedula, especialidad, anno)
-        self.anno = anno 
+    def __init__(self, nombre, apellido, cedula, especialidad, anio):
+        super().__init__(nombre, apellido, cedula, especialidad)
+        self.anno = anio 
 
     def visita_practica(self):
         pass
