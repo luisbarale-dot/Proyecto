@@ -1,6 +1,4 @@
-import json
-
-from src.models.menu import mostrar_menu
+from src.views.menu import mostrar_menu
 
 
 if __name__ == "__main__":

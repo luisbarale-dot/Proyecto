@@ -13,6 +13,14 @@
  - Gianna Giupponi
  - Federico Carrizo
 
+ ### Folders
+ - Models : Modelos bases de las clases e interfaces de Datos
+ - Data   : Datos guardados
+ - Utils  : Utilidades como Log 
+ - Controllers : Logica de los Moldelos
+ - Composables : Logica generica que se usa en varios Modelos
+ - Views  : Codigo a Renderizar que sera Interfaz de usuarios Como los Menus
+
 ## Roles
     - Especialista en Persistencia y Colas: Federico Carrizo
     - Arquitecto de POO y Estructuras de Datos: Guillermo Lescano

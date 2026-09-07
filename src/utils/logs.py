@@ -6,7 +6,7 @@ from pathlib import Path
 from rich.logging import RichHandler
 
 
-LOGS_DIR = Path(__file__).resolve().parent.parent / "logs"
+LOGS_DIR = Path(__file__).resolve().parent.parent / "data" / "logs"
 LOG_FILE = LOGS_DIR / "app.log"
 LOGGER_NAME = "gestor-practicas"
 
