@@ -11,6 +11,16 @@ print(ARCHIVO_USERS.exists())  # debe dar True
 # Instancia global de la utilidad
 json_utils = JsonUtil(str(ARCHIVO_USERS))
 
+def usuario_existe(username):
+    try:
+        datos = json_utils.read()
+        usuarios = datos.get("Usuarios", [])
+    except Exception:
+        error("Error al leer usuarios.json")
+        return False
+
+    return any(usuario.get("user") == username for usuario in usuarios)
+
 def iniciar_sesion(username, password):
     #Verifica credenciales de usuario usando JsonUtils
     try:

@@ -1,5 +1,5 @@
-from src.views.menu import mostrar_menu
+from src.views.menu_home import menu_home
 
 
 if __name__ == "__main__":
-    mostrar_menu()
+    menu_home()
