@@ -65,3 +65,13 @@
 2026-09-16 15:03:03 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
 2026-09-16 15:03:11 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
 2026-09-16 15:18:08 | INFO | gestor-practicas | ✅ Usuario Hola registrado exitosamente como profesor.
+2026-09-19 22:35:41 | INFO | gestor-practicas | ✅ Usuario Luis registrado exitosamente como profesor.
+2026-09-19 22:37:18 | INFO | gestor-practicas | ✅ Usuario Luis registrado exitosamente como profesor.
+2026-09-19 22:37:28 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
+2026-09-19 22:37:43 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
+2026-09-19 22:38:21 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
+2026-09-19 22:39:18 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor
+2026-09-19 22:39:21 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 1 de 3.
+2026-09-19 22:39:31 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor
+2026-09-19 22:39:39 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 2 de 3.
+2026-09-19 22:39:44 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 3 de 3.
