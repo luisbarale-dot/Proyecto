@@ -1,0 +1,73 @@
+2026-09-02 21:36:16 | ERROR | gestor-practicas | No se encontró el archivo usuarios.json
+2026-09-02 21:39:52 | INFO | gestor-practicas | ✓ Inicio de sesión exitoso.
+2026-09-02 21:45:30 | INFO | gestor-practicas | ✓ Inicio de sesión exitoso.
+2026-09-02 21:46:04 | INFO | gestor-practicas | ✓ Inicio de sesión exitoso.
+2026-09-02 21:49:12 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso.
+2026-09-02 22:01:48 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-02 22:05:40 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso.
+2026-09-02 22:07:28 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso.
+2026-09-03 17:51:38 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-03 17:52:08 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 11:57:52 | ERROR | gestor-practicas | ❌ Error al leer usuarios.json
+2026-09-11 11:57:52 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-11 11:57:52 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 11:58:22 | ERROR | gestor-practicas | ❌ Error al leer usuarios.json
+2026-09-11 11:58:22 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-11 11:58:22 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 11:58:42 | ERROR | gestor-practicas | ❌ Error al leer usuarios.json
+2026-09-11 11:58:42 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-11 11:58:42 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 12:02:02 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-11 12:02:03 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 12:03:12 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-11 12:03:12 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 12:04:28 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-11 12:04:28 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 12:10:30 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-11 12:10:30 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 12:11:27 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-11 12:11:27 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 12:13:00 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-11 12:13:00 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 12:14:04 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-11 12:14:04 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 12:15:21 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-11 12:15:21 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-11 12:18:50 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido 1234
+2026-09-11 12:19:06 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido 1234
+2026-09-16 13:00:49 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor
+2026-09-16 13:09:25 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor
+2026-09-16 13:14:17 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor
+2026-09-16 13:15:19 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor
+2026-09-16 13:41:14 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-16 13:41:14 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-16 13:42:35 | ERROR | gestor-practicas | ❌ Credenciales inválidas
+2026-09-16 13:42:35 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos.
+2026-09-16 13:50:39 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 1 de 4.
+2026-09-16 13:51:01 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 2 de 4.
+2026-09-16 13:51:03 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 3 de 4.
+2026-09-16 13:51:04 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 4 de 4.
+2026-09-16 13:52:29 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor
+2026-09-16 13:52:40 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 1 de 3.
+2026-09-16 13:52:41 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 2 de 3.
+2026-09-16 13:52:42 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 3 de 3.
+2026-09-16 13:56:09 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 1 de 3.
+2026-09-16 13:56:18 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 2 de 3.
+2026-09-16 13:56:19 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 3 de 3.
+2026-09-16 14:44:05 | ERROR | gestor-practicas | ❌ Este usuarios es incorrecto, quieres crear una cuenta
+2026-09-16 14:47:33 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
+2026-09-16 14:47:47 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
+2026-09-16 14:47:56 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
+2026-09-16 14:48:17 | ERROR | gestor-practicas | ❌ Usuario o contraseña incorrectos. Intento 1 de 3.
+2026-09-16 14:48:20 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor
+2026-09-16 15:00:45 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
+2026-09-16 15:01:42 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
+2026-09-16 15:03:03 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
+2026-09-16 15:03:11 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
+2026-09-16 15:18:08 | INFO | gestor-practicas | ✅ Usuario Hola registrado exitosamente como profesor.
+2026-09-23 15:03:22 | INFO | gestor-practicas | ✅ Usuario Luis registrado exitosamente como profesor.
+2026-09-23 15:16:12 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe. Por favor, registrese primero
+2026-09-23 15:16:50 | INFO | gestor-practicas | ✅ Usuario luis registrado exitosamente como alumno.
+2026-09-23 17:54:08 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido luis
+2026-09-23 18:44:21 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido luis
+2026-09-23 18:47:33 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido luis
