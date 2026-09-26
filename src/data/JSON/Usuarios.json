@@ -1,7 +1,11 @@
 {
     "Usuarios": [
         {
+<<<<<<< HEAD
             "user_id": "1",
+=======
+            "id": 1,
+>>>>>>> 8dff9e8 (Correcciones de errores en controllers y autenticación: módulos de controllers)
             "user": "imnotkonnor",
             "pass": "admin",
             "rol": "admin"

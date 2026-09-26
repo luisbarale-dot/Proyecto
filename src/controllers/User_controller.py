@@ -1,6 +1,10 @@
 # User_controller.py
 import src.composables.User.auth as user_auth #Importa el módulo de autenticación.
+<<<<<<< HEAD
 from src.models.users_class import Users  #importa tu clase Users.
+=======
+from src.models.users_class import Users  #importa la clase Users.
+>>>>>>> 8dff9e8 (Correcciones de errores en controllers y autenticación: módulos de controllers)
 
 class UserController:
     def __init__(self):
@@ -22,7 +26,11 @@ class UserController:
         return False #Si no existe, retorna falso.
 
 #Función para registrar nuevos usuarios, por defecto "alumnos":
+<<<<<<< HEAD
     def register(self, username: str, password: str, role: str="alumno") -> bool:
+=======
+    def register(self, username: str, password: str, role: str="Alumno"):
+>>>>>>> 8dff9e8 (Correcciones de errores en controllers y autenticación: módulos de controllers)
         if self.user_existe(username):
             return False
         return user_auth.registrar_usuario(username, password, role)
