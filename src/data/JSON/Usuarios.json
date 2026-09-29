@@ -1,11 +1,7 @@
 {
     "Usuarios": [
         {
-<<<<<<< HEAD
-            "user_id": "1",
-=======
             "id": 1,
->>>>>>> 8dff9e8 (Correcciones de errores en controllers y autenticación: módulos de controllers)
             "user": "imnotkonnor",
             "pass": "admin",
             "rol": "admin"
@@ -15,6 +11,60 @@
             "user": "luis",
             "pass": "1234",
             "rol": "admin"
+        },
+        {
+            "id": 3,
+            "user": "Profe1",
+            "pass": "1234",
+            "rol": "Profesor"
+        },
+        {
+            "id": 4,
+            "user": "Coso",
+            "pass": "1234",
+            "rol": "Adscriptor"
+        },
+        {
+            "id": 5,
+            "user": "lucas",
+            "pass": "1234",
+            "rol": "Alumno"
+        },
+        {
+            "id": 6,
+            "user": "Adscr",
+            "pass": "1234",
+            "rol": "Adscriptor"
+        },
+        {
+            "id": 7,
+            "user": "AdscriptorPrueba",
+            "pass": "1234",
+            "rol": "Adscriptor"
+        },
+        {
+            "id": 8,
+            "user": "AlumnoNuevo",
+            "pass": "1234",
+            "rol": "Alumno"
+        },
+        {
+            "id": 9,
+            "user": "NuevoAlumno",
+            "pass": "1234",
+            "rol": "Alumno"
+        },
+        {
+            "id": 10,
+            "user": "Cosito",
+            "pass": "1234",
+            "rol": "Alumno"
+        },
+        {
+            "id": 11,
+            "user": "ss",
+            "pass": "1234",
+            "rol": "Alumno"
         }
     ]
 }

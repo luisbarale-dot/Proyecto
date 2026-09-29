@@ -1,3 +1,10 @@
 {
-    "Profesores":[]
+    "Profesores": [
+        {
+            "user_id": 3,
+            "ci": "50862262",
+            "name": "Luis Barale",
+            "course": "Historia"
+        }
+    ]
 }

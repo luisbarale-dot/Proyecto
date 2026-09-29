@@ -1,3 +1,20 @@
 {
-    "Alumnos": []
+    "Alumnos": [
+        {
+            "user_id": 5,
+            "name": "lucas rodriguez",
+            "ci": "454653",
+            "course": "informática",
+            "grade": "2",
+            "gender": "H",
+            "bday": "10/05/88",
+            "city": "Paysandú",
+            "address": "Ayacucho 590",
+            "phone": "099556677",
+            "email": "ayaculu@gmail.com",
+            "educational_center": "IFD Paysandú",
+            "specialization": "Informática",
+            "reference_center": "Cerp del Litoral"
+        }
+    ]
 }

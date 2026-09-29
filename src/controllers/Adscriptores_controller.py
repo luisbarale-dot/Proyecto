@@ -1,6 +1,5 @@
 from pathlib import Path #Importo librería de Path.
 from src.models.professors_class import Adscriptores  #Importo la clase Adscriptores.
-from src.utils.logs import error #Importo el método "error" desde logs.
 from src.utils.jsonUtil import JsonUtil #Importo el módulo ya definido para usar json.
 
 ADSCRIPTO_DIR = Path(__file__).resolve().parent.parent

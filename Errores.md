@@ -261,3 +261,42 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 **Solución prevista:** Implementar getters y setters utilizando `@property`. Esto permitirá conservar los atributos privados y, al mismo tiempo, acceder a ellos mediante expresiones como `professor.ci` y `student.grade`. Además, los setters podrán utilizarse posteriormente para incorporar validaciones.
 
 \=================================================================
+
+
+\=================================================================
+
+**Error #024** — Módulo Admin_controller no ingresa los datos de professors_class
+**Archivos:** `Admin_controller.py`, `professors_class.py`  
+**Estado:** Solucionado
+
+**Descripción:** Se ingresaba al registro de profesores y el programa regresaba al menú de administrador.
+
+**Causa:** No se habían ingresado las variables necesarias para instanciar el objeto "Professors" correctamente.
+
+**Solución prevista:** Se ingresaron variables con inputs para poder ingresar los datos correctamente antes de retornar al método que los define dentro de sus correspondientes archivos json.
+
+\=================================================================
+
+**Error #025** — Atributos privados inaccesibles desde los controllers  
+**Archivos:** `professors_class.py`, `students_class.py` y sus respectivos controllers  
+**Estado:** Solucionado
+
+**Descripción:** Los modelos almacenan varios atributos mediante encapsulamiento, utilizando nombres como `__ci`, `__course`, `__grade`, etc. Sin embargo, los controllers intentan acceder a ellos mediante expresiones como `professor.ci`, `professor.course`, `student.ci` o `student.grade`.
+
+**Causa:** Los atributos fueron definidos como privados mediante doble guion bajo, pero  no existían propiedades públicas que permitan acceder a ellos desde los controllers.
+
+**Solución prevista:** Se implementaron getters con @property para poder utilizarlos en los módulos de controllers correspondientes, sin necesidad de modificar el código en los demás módulos.
+
+\=================================================================
+
+**Error #026** — Módulo de registro de usuario no permite ingresar los datos propios de un estudiante.
+**Archivos:** `users_class.py`, `registro_menu`, `menu_admin`
+**Estado:** Pendiente
+
+**Descripción:** Al momento de seleccionar la opción "Registrarse", el usuario con rol de Alumno debería poder ingresar sus datos, pero al momento solamente puede ingresar nombre de usuario y contraseña. Luego de hecho este paso, no se le permite modificar sus datos. Solamente el admin puede ingresar sus datos personales, lo cual no debería suceder.
+
+**Causa:** No se establece una relación directa entre el menú de registro (`registro_menu`) con el de administrador (`menu_admin`).
+
+**Solución prevista:** Se planea vincular al módulo de registro con el de admin, permitiéndole al usuario estudiante poder ingresar sus datos sin necesidad de un intermediario. También se pretende establecer un condicional que permita utilizar los módulos de modificar datos para cuando las id's o nombres de usuario aparezcan como ya registradas, para que el propio estudiante pueda cambiar algún dato erróneo que haya sido cargado en los archivos.
+
+\=================================================================
