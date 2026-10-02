@@ -35,4 +35,3 @@ class JsonUtil:
             return
         self.queue.enqueue((key,value))
         self.__aply()
-    

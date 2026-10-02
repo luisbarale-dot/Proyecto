@@ -1,3 +1,26 @@
 {
-    "Alumnos": []
+    "Alumnos": [
+        {
+            "cedula": "33333333",
+            "nombre": "Lucia",
+            "apellido": "Fernandez",
+            "especialidad": "Informatica",
+            "fecha_nacimiento": "10/03/2003",
+            "direccion": "Av. Italia 1234",
+            "celular": "099111222",
+            "anio": "3",
+            "estado": "Habilitado"
+        },
+        {
+            "cedula": "44444444",
+            "nombre": "Martin",
+            "apellido": "Rodriguez",
+            "especialidad": "Informatica",
+            "fecha_nacimiento": "22/07/2002",
+            "direccion": "18 de Julio 500",
+            "celular": "099222333",
+            "anio": "3",
+            "estado": "Suspenso"
+        }
+    ]
 }

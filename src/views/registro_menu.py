@@ -1,39 +1,53 @@
-from rich.console import Console
-from rich.panel import Panel
-from rich.prompt import Prompt
-
-# Imports necesarios para la funcionalidad del menú
+# registro_menu.py
 from src.utils.logs import success, error
-from src.controllers.User_controller import UserController  # Usamos el controller
+from src.controllers.User_controller import UserController
+from src.controllers.Students_controller import StudentsController
+from src.controllers.Professors__controller import ProfessorsController
 
-# Instancia de la clase Console para mostrar mensajes en la consola
-console = Console()
-# Instancia del controlador de usuarios, que maneja login/logout y estado de sesión
 controller = UserController()
+estudiantes_controller = StudentsController()
+profesores_controller = ProfessorsController()
+
 
 def registro():
-    console.clear()
+    print("\n===== REGISTRO DE USUARIO =====")
 
-    console.print(
-        Panel(
-            "[bold cyan]REGISTRO DE USUARIO[/bold cyan]",
-            border_style="cyan"
-        )
-    )
+    tipo_usuario = ""
+    while tipo_usuario not in ("estudiante", "adscriptor", "tutor"):
+        tipo_usuario = input("¿Es estudiante, adscriptor o tutor?: ").strip().lower()
 
-    tipo_usuario = Prompt.ask(
-        "¿Es profesor o alumno?",
-        choices=["profesor", "alumno"]
-    )
-    username = Prompt.ask("Ingrese un nombre de usuario")
-    password = Prompt.ask("Ingrese una contraseña", password=True)
-
+    username = input("Ingrese un nombre de usuario: ").strip()
     if controller.user_existe(username):
         error("El usuario ya existe. Por favor, elija otro nombre de usuario.")
-        console.input("\nPresione ENTER para continuar...")
+        input("\nPresione ENTER para continuar...")
         return
 
-    # controller.registrar_usuario(username, password)
+    password = input("Ingrese una contraseña: ").strip()
+    cedula = input("Cedula: ").strip()
+    nombre = input("Nombre: ").strip()
+    apellido = input("Apellido: ").strip()
 
-    success(f"Usuario {username} registrado exitosamente como {tipo_usuario}.")
-    console.input("\nPresione ENTER para continuar...")
+    exito = False
+    if tipo_usuario == "estudiante":
+        especialidad = input("Especialidad: ").strip()
+        fecha_nacimiento = input("Fecha de nacimiento (dd/mm/aaaa): ").strip()
+        direccion = input("Direccion: ").strip()
+        celular = input("Celular: ").strip()
+        anio = input("Año que cursa: ").strip()
+        exito = estudiantes_controller.alta_estudiante(
+            nombre, apellido, cedula, username, password,
+            especialidad, fecha_nacimiento, direccion, celular, anio,
+        )
+    elif tipo_usuario == "adscriptor":
+        centro = input("Centro educativo donde trabaja: ").strip()
+        exito = profesores_controller.alta_adscriptor(nombre, apellido, cedula, username, password, centro)
+    else:  # tutor
+        materia = input("Materia que dicta: ").strip()
+        exito = profesores_controller.alta_tutor(nombre, apellido, cedula, username, password, materia)
+
+    if exito:
+        success(f"Usuario {username} registrado exitosamente como {tipo_usuario}.")
+    else:
+        error("No se pudo completar el registro (dato duplicado).")
+
+    input("\nPresione ENTER para continuar...")

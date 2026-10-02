@@ -1,0 +1,12 @@
+{
+    "Adscriptos": [
+        {
+            "cedula": "11111111",
+            "nombre": "Mariana",
+            "apellido": "Perez",
+            "tipo": "adscriptor",
+            "centro_educativo": "Liceo N1 Centro",
+            "disponible": true
+        }
+    ]
+}

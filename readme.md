@@ -14,12 +14,18 @@
  - Federico Carrizo
 
  ### Folders
- - Models : Modelos bases de las clases e interfaces de Datos
- - Data   : Datos guardados
- - Utils  : Utilidades como Log 
- - Controllers : Logica de los Moldelos
- - Composables : Logica generica que se usa en varios Modelos
+ - Models : Modelos bases de las clases e interfaces de Datos (jerarquia Usuario -> Estudiante/Adscriptor/Tutor/Admin)
+ - Data   : Datos guardados (src/data/JSON/*.json: Usuarios, Alumnos, Adcriptos, Profesores)
+ - Utils  : Utilidades como Log, Cola FIFO generica y JsonUtil (lectura/escritura de JSON)
+ - Controllers : Logica de los Modelos
+ - Composables : Persistencia y logica generica, separada por carpeta segun a que Modelo pertenece (Usuarios, Estudiantes, Profesores)
  - Views  : Codigo a Renderizar que sera Interfaz de usuarios Como los Menus
+
+ ### Como correr
+ ```
+ python3 main.py
+ ```
+ Usuario admin de prueba: `admin` / `admin123`. Ver mas usuarios de prueba en `src/data/JSON/Usuarios.json`.
 
 ## Roles
     - Especialista en Persistencia y Colas: Federico Carrizo

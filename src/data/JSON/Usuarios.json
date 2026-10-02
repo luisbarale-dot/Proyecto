@@ -1,16 +1,39 @@
 {
     "Usuarios": [
         {
-            "user_id": "1",
-            "user": "imnotkonnor",
-            "pass": "admin",
-            "rol": "admin"
+            "id": 1,
+            "user": "admin",
+            "pass": "admin123",
+            "rol": "admin",
+            "cedula": "00000000"
         },
         {
-            "user_id": "2",
-            "user": "1234",
-            "pass": "1234",
-            "rol": "user"
+            "id": 2,
+            "user": "mperez",
+            "pass": "clave123",
+            "rol": "adscriptor",
+            "cedula": "11111111"
+        },
+        {
+            "id": 3,
+            "user": "cgomez",
+            "pass": "clave123",
+            "rol": "tutor",
+            "cedula": "22222222"
+        },
+        {
+            "id": 4,
+            "user": "lfernandez",
+            "pass": "clave123",
+            "rol": "estudiante",
+            "cedula": "33333333"
+        },
+        {
+            "id": 5,
+            "user": "mrodriguez",
+            "pass": "clave123",
+            "rol": "estudiante",
+            "cedula": "44444444"
         }
     ]
 }
