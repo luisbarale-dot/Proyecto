@@ -15,9 +15,10 @@ def registro():
     if controller.user_existe(username): #Comprobamos si el usuario ya existe.
             print("El usuario ya existe. Por favor, elija otro nombre de usuario.")
             return
-    if controller.register(username, password): #Registramos al usuario.
-        ci = input("Cédula: ")
+    user_id = controller.register(username, password, "Alumno")
+    if user_id: #Registramos al usuario.
         name = input("Nombre/s y Apellido/s: ")
+        ci = input("Cédula: ")
         course = input("Materia: ")
         grade = input("Año/Grado en que cursa: ")
         gender = input("Género: ")
@@ -29,8 +30,23 @@ def registro():
         educational_center = input("Centro Educativo: ")
         specialization = input("Especialidad: ")
         reference_center = input("Centro de Referencia: ")
-        return studcon.ceate_student(username, password, name, ci, course, grade, gender, bday, city, address, phone, email, educational_center, specialization, reference_center)
-
+        student_data = {
+                "user_id": user_id,
+                "name": name,
+                "ci": ci,
+                "course": course,
+                "grade": grade,
+                "gender": gender,
+                "bday": bday,
+                "city": city,
+                "address": address,
+                "phone": phone,
+                "email": email,
+                "educational_center": educational_center,
+                "specialization": specialization,
+                "reference_center": reference_center
+                }
+        return studcon.create_student(student_data)
     else:
-        print("\nNo se pudo registrar el usuario.") #Se ejecuta si sucede algún error.
-        return
+        print("No se pudo registrar el usuario.") #Se ejecuta si sucede algún error.
+        return False

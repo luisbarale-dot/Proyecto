@@ -1,20 +1,20 @@
 {
     "Alumnos": [
         {
-            "user_id": 5,
-            "name": "lucas rodriguez",
-            "ci": "454653",
-            "course": "informática",
+            "user_id": 3,
+            "name": "Alumno Prueba",
+            "ci": "53342223",
+            "course": "Didáctica I",
             "grade": "2",
-            "gender": "H",
-            "bday": "10/05/88",
+            "gender": "M",
+            "bday": "22 / 12 / 04",
             "city": "Paysandú",
-            "address": "Ayacucho 590",
-            "phone": "099556677",
-            "email": "ayaculu@gmail.com",
-            "educational_center": "IFD Paysandú",
+            "address": "Belgrano 2004",
+            "phone": "099553433",
+            "email": "AlumnoPrueba@gmail.com",
+            "educational_center": "Cerp",
             "specialization": "Informática",
-            "reference_center": "Cerp del Litoral"
+            "reference_center": "Cerp"
         }
     ]
 }

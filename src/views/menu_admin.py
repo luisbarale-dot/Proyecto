@@ -1,6 +1,9 @@
 from src.controllers.Admin_controller import AdminController
+from src.controllers.User_controller import UserController
 
 controller = AdminController() #Instanciamos el módulo AdminController
+UserCon = UserController()
+
 
 def menu_admin():
     while True:
@@ -19,25 +22,40 @@ def menu_admin():
             print("Registrar Profesor: ")
             username = input("Usuario: ")
             password = input("Contraseña: ")
+            if UserCon.user_existe(username): #Comprobamos si el usuario ya existe.
+                print("El usuario ya existe. Por favor, elija otro nombre de usuario.")
+                return
             ci = input("Cédula: ")
             name = input("Nombre/s y Apellido/s: ")
             course = input("Materia/Especialidad: ")
-            return controller.register_Professor(username, password, ci, name, course)
+            professor_data = {  "ci": ci,
+                                "name": name,
+                                "course": course}
+            return controller.register_Professor(username, password, professor_data)
                       #Se usa el método register_Professor, instanciado con los datos ingresados.
         
         elif opcion == "2":
             print("Registrar Adscriptor: ")
             username = input("Usuario: ")
             password = input("Contraseña: ")
+            if UserCon.user_existe(username): #Comprobamos si el usuario ya existe.
+                print("El usuario ya existe. Por favor, elija otro nombre de usuario.")
+                return
             ci = input("Cédula: ")
             name = input("Nombre/s y Apellido/s: ")
             course = input("Materia/Especialidad: ")
-            return controller.register_Adscriptor(username, password, ci, name, course)
+            adscriptor_data = { "ci": ci,
+                                "name": name,
+                                "course": course}
+            return controller.register_Adscriptor(username, password, adscriptor_data)
         
         elif opcion == "3":
             print("Registrar Alumno: ")
             username = input("Usuario: ")
             password = input("Contraseña: ")
+            if UserCon.user_existe(username): #Comprobamos si el usuario ya existe.
+                print("El usuario ya existe. Por favor, elija otro nombre de usuario.")
+                return
             ci = input("Cédula: ")
             name = input("Nombre/s y Apellido/s: ")
             course = input("Materia: ")
@@ -51,7 +69,22 @@ def menu_admin():
             educational_center = input("Centro Educativo: ")
             specialization = input("Especialidad: ")
             reference_center = input("Centro de Referencia: ")
-            return controller.register_Student(username, password, name, ci, course, grade, gender, bday, city, address, phone, email, educational_center, specialization, reference_center)
+            student_data = {
+                "name": name,
+                "ci": ci,
+                "course": course,
+                "grade": grade,
+                "gender": gender,
+                "bday": bday,
+                "city": city,
+                "address": address,
+                "phone": phone,
+                "email": email,
+                "educational_center": educational_center,
+                "specialization": specialization,
+                "reference_center": reference_center
+                }
+            return controller.register_Student(username, password, student_data)
         
         elif opcion == "4":
             print("Cerrando sesión...")

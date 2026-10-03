@@ -10,11 +10,11 @@ controller = UserController()
 def menu_home():
     while True:
         print("""
-        \n=================================
+        =================================
           SISTEMA DE GESTIÓN DE PRÁCTICAS
         ===================================
         1. Iniciar Sesión
-        2. Registrarse
+        2. Registrarse como Estudiante
         3. Salir""")
         opcion = input("Seleccione una opción: ")
         if opcion == "1":

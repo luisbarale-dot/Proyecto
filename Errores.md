@@ -58,8 +58,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 ============================================================
 
-**Error #007** — Error de sintaxis por f-string sin cerrar  
-**Archivo:** `inicio_sesion.py`  
+**Error #007** — Error de sintaxis por f-string sin cerrar
+**Archivo:** `inicio_sesion.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** Al intentar ejecutar el proyecto, Python indicaba un `SyntaxError: unterminated f-string literal`, impidiendo que el programa pudiera iniciarse correctamente.
@@ -70,8 +70,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #008** — Uso incorrecto de `super()` en la clase `Adscriptores`  
-**Archivo:** `professors_class.py`  
+**Error #008** — Uso incorrecto de `super()` en la clase `Adscriptores`
+**Archivo:** `professors_class.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** La clase `Adscriptores`, que hereda de `Professors`, realizaba incorrectamente la llamada al constructor de la clase padre.
@@ -82,8 +82,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #009** — Comprobación incompleta de profesores existentes  
-**Archivo:** `Professors__controller.py`  
+**Error #009** — Comprobación incompleta de profesores existentes
+**Archivo:** `Professors__controller.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** El método encargado de comprobar si un profesor ya estaba registrado solamente comprobaba correctamente el primer elemento de la lista de profesores.
@@ -94,8 +94,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #010** — Comprobación incompleta de adscriptores existentes  
-**Archivo:** `Adscriptores_controller.py`  
+**Error #010** — Comprobación incompleta de adscriptores existentes
+**Archivo:** `Adscriptores_controller.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** La búsqueda de un adscriptor existente podía finalizar después de comprobar solamente el primer elemento de la lista.
@@ -106,8 +106,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #011** — Comprobación incompleta de alumnos existentes  
-**Archivo:** `Students_controller.py`  
+**Error #011** — Comprobación incompleta de alumnos existentes
+**Archivo:** `Students_controller.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** El método utilizado para comprobar la existencia de un alumno podía devolver `False` después de analizar únicamente el primer registro.
@@ -118,8 +118,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #012** — Validación de profesor duplicado ubicada dentro de `except`  
-**Archivo:** `Professors__controller.py`  
+**Error #012** — Validación de profesor duplicado ubicada dentro de `except`
+**Archivo:** `Professors__controller.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** La comprobación destinada a impedir el registro de profesores duplicados solamente se ejecutaba cuando ocurría una excepción.
@@ -130,8 +130,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #013** — Registro de profesor sin valor de retorno en caso de éxito  
-**Archivo:** `Professors__controller.py`  
+**Error #013** — Registro de profesor sin valor de retorno en caso de éxito
+**Archivo:** `Professors__controller.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** El método `register_Professor()` devolvía `False` cuando ocurría un problema, pero no devolvía ningún valor cuando el registro se completaba correctamente.
@@ -142,8 +142,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #014** — Manejo incorrecto del objeto `Exception`  
-**Módulos:** Controllers de profesores y adscriptores  
+**Error #014** — Manejo incorrecto del objeto `Exception`
+**Módulos:** Controllers de profesores y adscriptores
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** Algunos bloques de tratamiento de errores utilizaban `str(Exception)`, por lo que no mostraban correctamente el error concreto ocurrido durante la ejecución.
@@ -154,8 +154,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #015** — Clave `ci` escrita incorrectamente en los diccionarios  
-**Módulos:** Controllers de profesores y adscriptores  
+**Error #015** — Clave `ci` escrita incorrectamente en los diccionarios
+**Módulos:** Controllers de profesores y adscriptores
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** Algunos diccionarios utilizaban la clave `"ci:"` mientras otras partes del proyecto utilizaban `"ci"`.
@@ -166,8 +166,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #016** — Orden incorrecto de `name` y `ci` al crear un alumno  
-**Archivo:** `Students_controller.py`  
+**Error #016** — Orden incorrecto de `name` y `ci` al crear un alumno
+**Archivo:** `Students_controller.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** Al instanciar la clase `Students`, los valores correspondientes al nombre y la cédula eran enviados en un orden diferente al definido por el constructor.
@@ -178,8 +178,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #017** — Inconsistencia en el nombre del archivo y clave de Adscriptores  
-**Archivos:** `Adscriptores_controller.py` y JSON de Adscriptores  
+**Error #017** — Inconsistencia en el nombre del archivo y clave de Adscriptores
+**Archivos:** `Adscriptores_controller.py` y JSON de Adscriptores
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** Existían diferentes nombres para identificar los datos correspondientes a los adscriptores. Esto podía provocar que el controller no encontrara el archivo o la lista esperada dentro del JSON.
@@ -190,8 +190,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #018** — Inconsistencia en la clave identificadora de usuarios  
-**Archivo:** `Usuarios.json`  
+**Error #018** — Inconsistencia en la clave identificadora de usuarios
+**Archivo:** `Usuarios.json`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** El usuario administrador utilizaba `"user_id"` para almacenar su identificador, mientras los usuarios creados posteriormente utilizaban `"id"`.
@@ -202,8 +202,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #019** — Cálculo redundante del ID después de registrar un usuario  
-**Archivo:** `auth.py`  
+**Error #019** — Cálculo redundante del ID después de registrar un usuario
+**Archivo:** `auth.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** Después de calcular el nuevo ID, crear el usuario y agregarlo a la lista, el código volvía a asignar `nuevo_id = len(usuarios)` antes de retornarlo.
@@ -214,8 +214,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #020** — `AdminController` continuaba el registro sin comprobar la creación del usuario  
-**Archivo:** `Admin_controller.py`  
+**Error #020** — `AdminController` continuaba el registro sin comprobar la creación del usuario
+**Archivo:** `Admin_controller.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** Los métodos de registro del administrador obtenían el resultado de `UserController.register()`, pero inicialmente no controlaban correctamente si el registro del usuario había fallado antes de intentar crear un profesor, adscriptor o alumno.
@@ -226,8 +226,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #021** — Intento de registrar dos veces al usuario desde `AdminController`  
-**Archivo:** `Admin_controller.py`  
+**Error #021** — Intento de registrar dos veces al usuario desde `AdminController`
+**Archivo:** `Admin_controller.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** Durante el desarrollo de `register_Professor()` se planteó utilizar `UserController.register()` primero como condición de un `if` y posteriormente volver a ejecutarlo para obtener el ID.
@@ -238,8 +238,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #022** — Parámetro `registration_card` sin utilización  
-**Archivo:** `Admin_controller.py`  
+**Error #022** — Parámetro `registration_card` sin utilización
+**Archivo:** `Admin_controller.py`
 **Estado:** Solucionado (aún en Branch)
 
 **Descripción:** El método `register_Student()` recibía el parámetro `registration_card`, pero este valor no era utilizado para construir los datos del alumno ni posteriormente almacenado.
@@ -250,8 +250,8 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #023** — Atributos privados inaccesibles desde los controllers  
-**Archivos:** `professors_class.py`, `students_class.py` y sus respectivos controllers  
+**Error #023** — Atributos privados inaccesibles desde los controllers
+**Archivos:** `professors_class.py`, `students_class.py` y sus respectivos controllers
 **Estado:** Pendiente
 
 **Descripción:** Los modelos almacenan varios atributos mediante encapsulamiento, utilizando nombres como `__ci`, `__course`, `__grade`, etc. Sin embargo, los controllers intentan acceder a ellos mediante expresiones como `professor.ci`, `professor.course`, `student.ci` o `student.grade`.
@@ -262,12 +262,11 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-
 \=================================================================
 
 **Error #024** — Módulo Admin_controller no ingresa los datos de professors_class
-**Archivos:** `Admin_controller.py`, `professors_class.py`  
-**Estado:** Solucionado
+**Archivos:** `Admin_controller.py`, `professors_class.py`
+**Estado:** Solucionado (en branch)
 
 **Descripción:** Se ingresaba al registro de profesores y el programa regresaba al menú de administrador.
 
@@ -277,9 +276,9 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 
 \=================================================================
 
-**Error #025** — Atributos privados inaccesibles desde los controllers  
-**Archivos:** `professors_class.py`, `students_class.py` y sus respectivos controllers  
-**Estado:** Solucionado
+**Error #025** — Atributos privados inaccesibles desde los controllers
+**Archivos:** `professors_class.py`, `students_class.py` y sus respectivos controllers
+**Estado:** Solucionado (en branch)
 
 **Descripción:** Los modelos almacenan varios atributos mediante encapsulamiento, utilizando nombres como `__ci`, `__course`, `__grade`, etc. Sin embargo, los controllers intentan acceder a ellos mediante expresiones como `professor.ci`, `professor.course`, `student.ci` o `student.grade`.
 
@@ -300,3 +299,83 @@ Solución: Se identificó logs.py como uno de los archivos que debía ser revisa
 **Solución prevista:** Se planea vincular al módulo de registro con el de admin, permitiéndole al usuario estudiante poder ingresar sus datos sin necesidad de un intermediario. También se pretende establecer un condicional que permita utilizar los módulos de modificar datos para cuando las id's o nombres de usuario aparezcan como ya registradas, para que el propio estudiante pueda cambiar algún dato erróneo que haya sido cargado en los archivos.
 
 \=================================================================
+
+**Error #027** — Módulo "logs.py" y "rich" no utilizado.
+**Archivos:** `logs.py`, `app.log`
+**Estado:** Solucionado (En branch)
+
+**Descripción:** El módulo "logs.py" se utilizaba para guardar los registros de los nuevos usuarios. También se encontraban algunos módulos con "imports" a la librería rich, que se decidió no utilizar.
+
+**Solución prevista:** Al no ser utilizado para el proyecto en general, se eliminó este y su carpeta "app.log" en donde se guardaban los registros.
+
+\=================================================================
+
+**Error #028** —  El "user_id" del estudiante se almacenaba como "False".
+
+**Archivos:**`registro_menu.py`, `User_controller.py`, `Alumnos.json`
+**Estado:** Solucionado (En branch)
+
+**Descripción:** Al registrar un nuevo estudiante, el campo "user_id" dentro de "Alumnos.json" se almacenaba con el booleano "False", en lugar de contener el mismo ID generado en "Usuarios.json".
+
+**Causa:** El método encargado de registrar al usuario era retornado dos veces. El primer retorno registraba correctamente al usuario, pero no se almacenaba el ID retornado. La segunda vez se intentaba registrar nuevamente al mismo nombre de usuario y retornaba "False" al detectar que ya existía.
+
+**Solución prevista:** Se modificó el registro para realizar una única llamada al método "register()" almacenando directamente su resultado en la variable "user_id". Este valor posteriormente es utilizado para relacionar los datos del estudiante con su usuario correspondiente.
+
+=================================================================
+
+**Error #029** —  El "registro_menu" daba error al querer registrar a Alumnos.
+
+**Archivos:**`registro_menu.py`, `User_controller.py`, `Alumnos.json`
+**Estado:** Solucionado (En branch)
+
+**Descripción:** Al registrar un nuevo estudiante, el controller de "Students" pedía ingresar un 2 atributos, cuando se le estaba intentando cargar 16.
+
+**Causa:** Al retornar desde el módulo "registro_menu", no se estableció previamente un diccionario que guardara los datos del estudiante como "student_data", el cual era el tipo de atributo solicitado por el módulo "create_student" del "Student_controller".
+
+**Solución prevista:** Se modificó el menú de registro para que este cargara los datos del estudiante dentro de un diccionario, el cual se llamó "student_data", que sería retornado por este módulo hacia el controller de estudiante.
+
+=================================================================
+
+**Error #030** — Falta de relación entre el ID del usuario y los datos del docente
+**Archivos:**`Admin_controller.py`, `Professors__controller.py`,`Adscriptores_controller.py`
+**Estado:** Solucionado (En branch)
+
+**Descripción:** Al registrar un profesor o adscriptor, `AdminController` obtenía correctamente el ID generado durante la creación del usuario, pero dicho ID no era agregado a los datos específicos del docente.
+
+**Causa:** Los diccionarios `professor_data` y `adscriptor_data` contenían los datos personales ingresados desde el menú, pero no incluían la clave `"user_id"` necesaria para relacionarlos con el registro existente en `Usuarios.json`.
+
+**Solución prevista:** Luego de obtener el ID retornado por `UserController.register()`, se agregó dicho valor al diccionario correspondiente mediante:
+
+`professor_data["user_id"] = user_id`
+
+y, para adscriptores:
+
+`adscriptor_data["user_id"] = user_id`
+
+De esta forma, el "id" almacenado en "Usuarios.json" puede relacionarse con el "user_id" almacenado en los archivos correspondientes a cada tipo de usuario.
+
+=================================================================
+
+**Error #031** — Método `register_Adscriptor()` no recibía la contraseña
+**Archivo:**`Admin_controller.py`
+**Estado:** Solucionado (En branch)
+
+**Descripción:** Al intentar registrar un adscriptor desde el menú de administrador, el método necesitaba utilizar la contraseña ingresada para crear el usuario, pero esta no formaba parte de sus parámetros.
+
+**Causa:** El método `register_Adscriptor()` utilizaba la variable "password" al llamar aUserController.register(), aunque dicha variable no había sido recibida por el método.
+
+**Solución prevista:** Se agregó "password" como parámetro de register_Adscriptor(), permitiendo recibir correctamente el nombre de usuario, contraseña y datos personales necesarios para completar el registro.
+
+=================================================================
+
+**Error #032** — Separación incorrecta de responsabilidades durante el registro de docentes
+**Archivos:**`menu_admin.py`, `Admin_controller.py`
+**Estado:** Solucionado (En branch)
+
+**Descripción:** El menú de administrador realizaba parte del registro del usuario y "AdminController" realizaba otra parte, provocando repetición de código y dificultades para conservar correctamente el ID generado.
+
+**Causa:** No estaba claramente establecido qué módulo debía encargarse de crear el usuario y cuál debía limitarse a solicitar los datos.
+
+**Solución prevista:** Se estableció que `menu_admin.py` se encargue de solicitar los datos mediante los input correspondientes y construir los diccionarios de información. AdminController recibe esos datos, registra al usuario mediante UserController, obtiene su ID y lo agrega al diccionario antes de enviarlo al controller correspondiente.
+
+=================================================================

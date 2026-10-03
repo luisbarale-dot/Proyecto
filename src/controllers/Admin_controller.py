@@ -11,49 +11,29 @@ class AdminController: #Se define el Admin con los métodos de los demás contro
         self.__StudCon = StudCon()
         self.__UserCon = UserCon()
 
-    def register_Professor(self, username, password, ci, name, course): 
+    def register_Professor(self, username, password, professor_data:dict): 
         """Se solicitan atributos que brinda el módulo auth, a través del módulo User_controller."""
         user_id = self.__UserCon.register(username, password, "Profesor") #El método citado retorna el número de id nuevo.
-                                         #Se solicita nombre de usuario y contraseña. El rol queda predefinido.
+            #Se solicita nombre de usuario y contraseña. El rol queda predefinido.
         if user_id: #Si el usuario se registró correctamente y se obtuvo su ID, se continúa con el registro del docente.
-            professor_data = {"user_id": user_id, #Se agrega el nuevo número de usuario automático.
-                          "ci": ci, #Atributos propios de la clase Profesor.
-                          "name": name,
-                          "course": course}
+            professor_data["user_id"] = user_id #Guardo la misma id de users al registro de profesores.
             return self.__ProfCon.register_Professor(professor_data) #Se recurre al método de registro del controller de Profesor.
         return False #Si no se pudo registrar el usuario, se interrumpe el registro del docente.
     
-    def register_Adscriptor(self, username, password, ci, name, course):
+    def register_Adscriptor(self, username, password, adscriptor_data: dict):
         """Se solicitan atributos que brinda el módulo auth, a través del módulo User_controller."""
         user_id = self.__UserCon.register(username, password, "Adscriptor") #El método citado retorna el número de id nuevo.
-                                         #Se solicita nombre de usuario y contraseña. El rol queda predefinido.
+            #Se solicita nombre de usuario y contraseña. El rol queda predefinido.
         if user_id: #Si existe su ID, se procede con el registro.
-            adscriptor_data = {"user_id": user_id, #Se agrega el nuevo número de usuario automático.
-                          "ci": ci,
-                          "name": name,
-                          "course": course}
+            adscriptor_data["user_id"] = user_id #Agrego el id de users para que sea el mismo en adscriptores.
             return self.__AdsCon.register_Adscriptor(adscriptor_data)
         return False #Si no se pudo registrar, se interrumpe el registro.
     
-    def register_Student(self, username, password, name, ci, course, grade, gender, bday, city, address, phone, email, educational_center, specialization, reference_center):
+    def register_Student(self, username, password, student_data:dict):
         """Se solicitan atributos que brinda el módulo auth, a través del módulo User_controller."""
         user_id = self.__UserCon.register(username, password, "Alumno") #El método citado retorna el número de id nuevo.
-                                         #Se solicita nombre de usuario y contraseña. El rol queda predefinido.
+                #Se solicita nombre de usuario y contraseña. El rol queda predefinido.
         if user_id: #Si hay id, se procede con el registro.
-            student_data = {"user_id": user_id, #Se agrega el nuevo número de usuario automático.
-                "ci": ci,
-                "name": name,
-                "course": course,
-                "grade": grade,
-                "gender": gender,
-                "bday": bday,
-                "city": city,
-                "address": address,
-                "phone": phone,
-                "email": email,
-                "educational_center": educational_center,
-                "specialization": specialization,
-                "reference_center": reference_center
-                }
+            student_data["user_id"] = user_id #Agrego el id para que sea el mismo de users.
             return self.__StudCon.create_student(student_data)
         return False #Si no se pudo registrar, se interrumpe el registro.

@@ -1,5 +1,4 @@
 from pathlib import Path
-from src.utils.logs import error
 from src.utils.jsonUtil import JsonUtil
 from src.models.students_class import Students
 
@@ -78,7 +77,7 @@ class StudentController:
             self.current_student = student #Guarda el objeto recién creado como  estudiante actual.
             return True
         except Exception as e:
-            error(f"Error al crear el estudiante: {str(e)}")
+            print(f"Error al crear el estudiante: {str(e)}")
             return False
 
     def update_student(self, user_id, new_data: dict) -> bool: #Actualizar un estudiante.

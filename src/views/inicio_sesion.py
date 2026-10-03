@@ -10,7 +10,7 @@ controller = UserController() #Utilizamos el módulo "user_controller",
 #Función para manejar el inicio de sesión del usuario (cualquiera sea su rol).
 def login():
     print("""
-    \n==================================
+    ==================================
                INICIAR SESION
     ==================================""")
     username = input("Usuario: ")
