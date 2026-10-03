@@ -1,28 +1,28 @@
 class Students:
-    def __init__(self, user_id, ci, name, second_name=None, last_name, second_last_name,
-                 course, grade, gender, bday, city, address, phone, email,
-                 educational_center, civic_credential, specialization,
-                 reference_center):
+    def __init__(self, user_id, cedula, nombre, apellido, segundo_apellido,
+                 curso, grado, genero, fecha_nacimiento, ciudad, direccion,
+                 celular, email, centro_educativo, credencial_civica,
+                 especialidad, centro_referencia, segundo_nombre=None):
 
         # Atributos privados
         self.__user_id = user_id
-        self.__ci = ci
-        self.__name = name
-        self.__second_name = second_name
-        self.__last_name = last_name
-        self.__second_last_name = second_last_name
-        self.__course = course
-        self.__grade = grade
-        self.__gender = gender
-        self.__bday = bday
-        self.__city = city
-        self.__address = address
-        self.__phone = phone
+        self.__cedula = cedula
+        self.__nombre = nombre
+        self.__segundo_nombre = segundo_nombre
+        self.__apellido = apellido
+        self.__segundo_apellido = segundo_apellido
+        self.__curso = curso
+        self.__grado = grado
+        self.__genero = genero
+        self.__fecha_nacimiento = fecha_nacimiento
+        self.__ciudad = ciudad
+        self.__direccion = direccion
+        self.__celular = celular
         self.__email = email
-        self.__educational_center = educational_center
-        self.__civic_credential = civic_credential
-        self.__specialization = specialization
-        self.__reference_center = reference_center
+        self.__centro_educativo = centro_educativo
+        self.__credencial_civica = credencial_civica
+        self.__especialidad = especialidad
+        self.__centro_referencia = centro_referencia
 
 
     # GETTERS
@@ -30,110 +30,110 @@ class Students:
     def get_user_id(self):
         return self.__user_id
 
-    def get_ci(self):
-        return self.__ci
+    def get_cedula(self):
+        return self.__cedula
 
-    def get_name(self):
-        return self.__name
+    def get_nombre(self):
+        return self.__nombre
 
-    def get_second_name(self):
-        return self.__second_name
+    def get_segundo_nombre(self):
+        return self.__segundo_nombre
 
-    def get_last_name(self):
-        return self.__last_name
+    def get_apellido(self):
+        return self.__apellido
 
-    def get_second_last_name(self):
-        return self.__second_last_name
+    def get_segundo_apellido(self):
+        return self.__segundo_apellido
 
-    def get_course(self):
-        return self.__course
+    def get_curso(self):
+        return self.__curso
 
-    def get_grade(self):
-        return self.__grade
+    def get_grado(self):
+        return self.__grado
 
-    def get_gender(self):
-        return self.__gender
+    def get_genero(self):
+        return self.__genero
 
-    def get_bday(self):
-        return self.__bday
+    def get_fecha_nacimiento(self):
+        return self.__fecha_nacimiento
 
-    def get_city(self):
-        return self.__city
+    def get_ciudad(self):
+        return self.__ciudad
 
-    def get_address(self):
-        return self.__address
+    def get_direccion(self):
+        return self.__direccion
 
-    def get_phone(self):
-        return self.__phone
+    def get_celular(self):
+        return self.__celular
 
     def get_email(self):
         return self.__email
 
-    def get_educational_center(self):
-        return self.__educational_center
+    def get_centro_educativo(self):
+        return self.__centro_educativo
 
-    def get_civic_credential(self):
-        return self.__civic_credential
+    def get_credencial_civica(self):
+        return self.__credencial_civica
 
-    def get_specialization(self):
-        return self.__specialization
+    def get_especialidad(self):
+        return self.__especialidad
 
-    def get_reference_center(self):
-        return self.__reference_center
+    def get_centro_referencia(self):
+        return self.__centro_referencia
 
 
-    # SETTERS - Datos que puede modificar el estudiante (Tal vez verificar el criterio)
+    # SETTERS - Datos que puede modificar el estudiante
 
-    def set_ci(self, ci):
-        self.__ci = ci
+    def set_cedula(self, cedula):
+        self.__cedula = cedula
 
-    def set_name(self, name):
-        self.__name = name
+    def set_nombre(self, nombre):
+        self.__nombre = nombre
 
-    def set_second_name(self, second_name):
-        self.__second_name = second_name
+    def set_segundo_nombre(self, segundo_nombre):
+        self.__segundo_nombre = segundo_nombre
 
-    def set_last_name(self, last_name):
-        self.__last_name = last_name
+    def set_apellido(self, apellido):
+        self.__apellido = apellido
 
-    def set_second_last_name(self, second_last_name):
-        self.__second_last_name = second_last_name
+    def set_segundo_apellido(self, segundo_apellido):
+        self.__segundo_apellido = segundo_apellido
 
-    def set_gender(self, gender):
-        self.__gender = gender
+    def set_genero(self, genero):
+        self.__genero = genero
 
-    def set_bday(self, bday):
-        self.__bday = bday
+    def set_fecha_nacimiento(self, fecha_nacimiento):
+        self.__fecha_nacimiento = fecha_nacimiento
 
-    def set_city(self, city):
-        self.__city = city
+    def set_ciudad(self, ciudad):
+        self.__ciudad = ciudad
 
-    def set_address(self, address):
-        self.__address = address
+    def set_direccion(self, direccion):
+        self.__direccion = direccion
 
-    def set_phone(self, phone):
-        self.__phone = phone
+    def set_celular(self, celular):
+        self.__celular = celular
 
     def set_email(self, email):
         self.__email = email
 
-    def set_civic_credential(self, civic_credential):
-        self.__civic_credential = civic_credential
+    def set_credencial_civica(self, credencial_civica):
+        self.__credencial_civica = credencial_civica
 
-    def set_specialization(self, specialization):
-        self.__specialization = specialization
+    def set_especialidad(self, especialidad):
+        self.__especialidad = especialidad
 
 
-    # SETTERS- Datos que deben ser modificados administrativamente (Administrativo, secreatario, DOE)
+    # SETTERS - Datos que deben ser modificados administrativamente
 
-    def set_course(self, course):
-        self.__course = course
+    def set_curso(self, curso):
+        self.__curso = curso
 
-    def set_grade(self, grade):
-        self.__grade = grade
+    def set_grado(self, grado):
+        self.__grado = grado
 
-    def set_educational_center(self, educational_center):
-        self.__educational_center = educational_center
+    def set_centro_educativo(self, centro_educativo):
+        self.__centro_educativo = centro_educativo
 
-    def set_reference_center(self, reference_center):
-        self.__reference_center = reference_center
+    def set_centro_referencia(self, centro_referencia):
+        self.__centro_referencia = centro_referencia
