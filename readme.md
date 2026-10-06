@@ -29,7 +29,7 @@ Desde esta carpeta, ejecutar:
 python main.py
 ```
 
-El menú permite iniciar sesión o registrarse. Los administradores pueden registrar estudiantes, profesores/tutores y adscriptores, además de consultar y administrar los registros. Los usuarios y perfiles se guardan en `src/data/JSON/Usuarios.json`, `Alumnos.json`, `Profesores.json` y `Adcriptos.json`.
+El menú permite iniciar sesión o registrarse. Los administradores pueden registrar estudiantes, profesores y adscriptores, además de consultar y administrar los registros. Los usuarios y perfiles se guardan en `src/data/JSON/Usuarios.json`, `Alumnos.json`, `Profesores.json` y `Adcriptos.json`.
 
 Las cuentas que ya existen conservan su formato; los nuevos usuarios se guardan con un ID numérico y su rol.
 
@@ -67,7 +67,7 @@ Las cuentas que ya existen conservan su formato; los nuevos usuarios se guardan 
 - Implementar diferentes tipos de usuarios, por ejemplo:
     - Administrador.
     - Coordinador de prácticas.
-    - Docente/tutor.
+    - Docente/profesor.
     - Estudiante.
     - Centro educativo.
 - Limitar el acceso a las funcionalidades según el rol.

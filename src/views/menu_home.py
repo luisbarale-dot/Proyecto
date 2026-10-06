@@ -29,7 +29,7 @@ def _enrutar_por_rol(usuario):
         menu_estudiante.menu(usuario)
     elif rol == "admin":
         menu_admin.menu()
-    elif rol in ("adscriptor", "tutor", "profesor"):
+    elif rol in ("adscriptor", "profesor"):
         menu_profesor.menu(usuario)
     else:
         error(f"El rol '{usuario.get('rol', '')}' no tiene un menú asignado.")

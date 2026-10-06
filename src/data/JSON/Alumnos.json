@@ -1,3 +1,15 @@
 {
-    "Alumnos": []
+    "Alumnos": [
+        {
+            "cedula": "52111",
+            "nombre": "Adios",
+            "apellido": "Tercero",
+            "especialidad": "Minecraft",
+            "fecha_nacimiento": "20/02/2006",
+            "direccion": "Lush cave",
+            "celular": "Roca",
+            "anio": "1",
+            "estado": "Habilitado"
+        }
+    ]
 }

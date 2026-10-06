@@ -1,6 +1,6 @@
 
 
-from src.models.usuario_class import Adscriptor, Tutor
+from src.models.usuario_class import Adscriptor, Profesor
 from src.composables.Usuarios.usuarios_repo import UsuariosRepo
 from src.composables.Profesores.profesores_repo import ProfesoresRepo
 from src.utils.logs import info, error
@@ -32,7 +32,7 @@ class ProfessorsController:
             prof.cambiar_disponibilidad(bool(datos_prof.get("disponible", True)))
             return prof
         else:
-            return Tutor(
+            return Profesor(
                 user_id=user_id, nombre=nombre,
                 apellido=apellido, cedula=cedula,
                 username=datos_usuario["user"], password=datos_usuario["pass"],
@@ -58,8 +58,8 @@ class ProfessorsController:
     def listar_adscriptores(self):
         return self.listar(tipo="adscriptor")
 
-    def listar_tutores(self):
-        return self.listar(tipo="tutor")
+    def listar_profesores(self):
+        return self.listar(tipo="profesor")
 
     def buscar_por_cedula(self, cedula):
         for prof in self.listar():
@@ -98,7 +98,7 @@ class ProfessorsController:
         info(f"Adscriptor {nombre} {apellido} dado de alta")
         return True
 
-    def alta_tutor(
+    def alta_profesor(
         self, nombre, apellido, cedula, username, password, materia,
         segundo_nombre="", segundo_apellido="",
     ):
@@ -110,17 +110,17 @@ class ProfessorsController:
                 or self.usuarios_repo.existe_username(username)):
             error("Ya existe un profesor con esa cedula o usuario")
             return False
-        self.usuarios_repo.agregar(username, password, "tutor", cedula)
+        self.usuarios_repo.agregar(username, password, "profesor", cedula)
         try:
             self.profesores_repo.agregar({
                 "cedula": cedula, "nombre": nombre, "apellido": apellido,
                 "segundo_nombre": segundo_nombre, "segundo_apellido": segundo_apellido,
-                "tipo": "tutor", "course": materia,
+                "tipo": "profesor", "course": materia,
             })
         except Exception:
             self.usuarios_repo.eliminar_por_cedula(cedula)
             raise
-        info(f"Tutor {nombre} {apellido} dado de alta")
+        info(f"Profesor {nombre} {apellido} dado de alta")
         return True
 
     def cambiar_disponibilidad_adscriptor(self, cedula, disponible: bool):

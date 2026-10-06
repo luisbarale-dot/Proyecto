@@ -11,6 +11,13 @@
             "user": "1234",
             "pass": "1234",
             "rol": "user"
+        },
+        {
+            "id": 3,
+            "user": "hola",
+            "pass": "1234",
+            "rol": "estudiante",
+            "cedula": "52111"
         }
     ]
 }

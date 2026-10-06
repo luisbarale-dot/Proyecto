@@ -18,7 +18,7 @@ def iniciar_sesion(username: str, password: str):
 def registrar_usuario(username: str, password: str, role: str = "estudiante", cedula: str = ""):
     if not username or not password or usuarios_repo.existe_username(username):
         return None
-    roles_actuales = {"alumno": "estudiante", "profesor": "tutor"}
+    roles_actuales = {"alumno": "estudiante"}
     role = roles_actuales.get(role.strip().lower(), role.strip().lower())
     usuario = usuarios_repo.agregar(username, password, role, cedula)
     return usuario["id"]

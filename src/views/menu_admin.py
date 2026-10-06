@@ -8,11 +8,11 @@ admin = AdminController()
 def menu():
     while True:
         print("\n===== MENU ADMINISTRACION =====")
-        print("[1] Registrar Profesor/Tutor")
+        print("[1] Registrar Profesor")
         print("[2] Registrar Adscriptor")
         print("[3] Registrar Estudiante")
         print("[4] Gestionar Estudiantes")
-        print("[5] Gestionar Profesores (Adscriptores/Tutores)")
+        print("[5] Gestionar Profesores y Adscriptores")
         print("[6] Cerrar sesión")
 
         opcion = input("Seleccione una opcion: ").strip()
@@ -34,7 +34,7 @@ def menu():
 
 
 def _registrar_profesor():
-    print("\n--- Registrar profesor/tutor ---")
+    print("\n--- Registrar profesor ---")
     username = input("Usuario: ").strip()
     password = input("Contraseña: ")
     cedula = input("Cédula: ").strip()
@@ -44,7 +44,7 @@ def _registrar_profesor():
     segundo_apellido = input("Segundo apellido (opcional): ").strip()
     materia = input("Materia/especialidad: ").strip()
     _ejecutar_alta(
-        "profesor/tutor",
+        "profesor",
         lambda: admin.registrar_profesor(
             nombre, apellido, cedula, username, password, materia,
             segundo_nombre, segundo_apellido,
@@ -160,7 +160,7 @@ def _menu_profesores():
     while True:
         print("\n--- Profesores ---")
         print("[1] Listar adscriptores")
-        print("[2] Listar tutores")
+        print("[2] Listar profesores")
         print("[3] Volver")
 
         opcion = input("Seleccione una opcion: ").strip()
@@ -173,11 +173,11 @@ def _menu_profesores():
                 print(f" - {a}")
 
         elif opcion == "2":
-            tutores = admin.profesores.listar_tutores()
-            if not tutores:
-                print("No hay tutores cargados.")
-            for t in tutores:
-                print(f" - {t}")
+            profesores = admin.profesores.listar_profesores()
+            if not profesores:
+                print("No hay profesores cargados.")
+            for profesor in profesores:
+                print(f" - {profesor}")
 
         elif opcion == "3":
             return

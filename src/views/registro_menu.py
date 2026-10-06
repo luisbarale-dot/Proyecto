@@ -11,8 +11,8 @@ professors_controller = ProfessorsController()
 
 def registro():
     print("\n===== REGISTRO DE USUARIO =====")
-    tipo_usuario = input("Tipo de usuario (estudiante/adscriptor/tutor): ").strip().lower()
-    if tipo_usuario not in ("estudiante", "adscriptor", "tutor"):
+    tipo_usuario = input("Tipo de usuario (estudiante/adscriptor/profesor): ").strip().lower()
+    if tipo_usuario not in ("estudiante", "adscriptor", "profesor"):
         error("Tipo de usuario inválido.")
         return
 
@@ -74,7 +74,7 @@ def registro():
             segundo_nombre = input("Segundo nombre (opcional): ").strip()
             segundo_apellido = input("Segundo apellido (opcional): ").strip()
             materia = input("Materia que dicta: ").strip()
-            creado = professors_controller.alta_tutor(
+            creado = professors_controller.alta_profesor(
                 nombre, apellido, cedula, username, password, materia,
                 segundo_nombre, segundo_apellido,
             )

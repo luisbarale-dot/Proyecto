@@ -119,7 +119,7 @@ class Adscriptor(Usuario):
         return f"{base} | {disponibilidad} | A cargo de {len(self.__estudiantes_a_cargo)} estudiante(s)"
 
 
-class Tutor(Usuario):
+class Profesor(Usuario):
 
     def __init__(
         self, user_id, nombre, apellido, cedula, username, password, materia,
@@ -127,7 +127,7 @@ class Tutor(Usuario):
     ):
         super().__init__(
             user_id, nombre, apellido, cedula, username, password,
-            rol="tutor", segundo_nombre=segundo_nombre,
+            rol="profesor", segundo_nombre=segundo_nombre,
             segundo_apellido=segundo_apellido,
         )
         self.materia = materia

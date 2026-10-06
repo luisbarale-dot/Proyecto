@@ -6,8 +6,8 @@ profesores_controller = ProfessorsController()
 
 
 def menu(usuario):
-    if usuario.get("rol", "").lower() in ("tutor", "profesor"):
-        _menu_tutor(usuario)
+    if usuario.get("rol", "").lower() == "profesor":
+        _menu_profesor(usuario)
     else:
         _menu_adscriptor(usuario)
 
@@ -22,9 +22,9 @@ def _buscar_profesor(usuario):
     return profesores_controller.buscar_por_user_id(user_id)
 
 
-def _menu_tutor(usuario):
+def _menu_profesor(usuario):
     while True:
-        print(f"\n===== MENU TUTOR ({usuario['user']}) =====")
+        print(f"\n===== MENU PROFESOR ({usuario['user']}) =====")
         print("[1] Ver mis datos")
         print("[2] Volver")
 

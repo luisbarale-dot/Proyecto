@@ -13,7 +13,7 @@ class AdminController:
         self, nombre, apellido, cedula, username, password, materia,
         segundo_nombre="", segundo_apellido="",
     ):
-        return self.profesores.alta_tutor(
+        return self.profesores.alta_profesor(
             nombre, apellido, cedula, username, password, materia,
             segundo_nombre, segundo_apellido,
         )
