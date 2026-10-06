@@ -21,6 +21,7 @@ class StudentsController:
             user_id=datos_usuario.get("id", datos_usuario.get("user_id")),
             cedula=valor(datos_estudiante, "cedula", "ci"),
             nombre=valor(datos_estudiante, "nombre", "name"),
+            segundo_nombre=valor(datos_estudiante, "segundo_nombre", "second_name"),
             apellido=valor(datos_estudiante, "apellido", "last_name"),
             segundo_apellido=valor(datos_estudiante, "segundo_apellido", "second_last_name"),
             curso=valor(datos_estudiante, "curso", "course"),
@@ -35,7 +36,6 @@ class StudentsController:
             credencial_civica=valor(datos_estudiante, "credencial_civica", "civic_credential"),
             especialidad=valor(datos_estudiante, "especialidad", "specialization"),
             centro_referencia=valor(datos_estudiante, "centro_referencia", "reference_center"),
-            segundo_nombre=valor(datos_estudiante, "segundo_nombre", "second_name"),
         )
         estudiante.cambiar_estado(datos_estudiante.get("estado", "Habilitado"))
         return estudiante
