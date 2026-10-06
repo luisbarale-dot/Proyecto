@@ -1,36 +1,24 @@
-from pathlib import Path
-from src.utils.logs import error
-from src.utils.jsonUtil import JsonUtil
-# Importamos nuestra utilidad
+from src.composables.Usuarios.usuarios_repo import UsuariosRepo
 
-# Definimos la ruta del archivo usuarios.json
-DIR = Path(__file__).resolve().parent.parent.parent
-ARCHIVO_USERS = DIR / "data" / "JSON" / "Usuarios.json"
-print(ARCHIVO_USERS)       # ruta completa
-print(ARCHIVO_USERS.exists())  # debe dar True
-# Instancia global de la utilidad
-json_utils = JsonUtil(str(ARCHIVO_USERS))
 
-def usuario_existe(username):
-    try:
-        datos = json_utils.read()
-        usuarios = datos.get("Usuarios", [])
-    except Exception:
-        error("Error al leer usuarios.json")
-        return False
+usuarios_repo = UsuariosRepo()
 
-    return any(usuario.get("user") == username for usuario in usuarios)
 
-def iniciar_sesion(username, password):
-    #Verifica credenciales de usuario usando JsonUtils
-    try:
-        datos = json_utils.read()
-        usuarios = datos.get("Usuarios", [])
-    except Exception:
-        error("Error al leer usuarios.json")
-        return None
+def usuario_existe(username: str) -> bool:
+    return usuarios_repo.existe_username(username)
 
-    for usuario in usuarios:
-        if usuario.get("user") == username and usuario.get("pass") == password:
-            return usuario
+
+def iniciar_sesion(username: str, password: str):
+    usuario = usuarios_repo.obtener_por_username(username)
+    if usuario and usuario.get("pass") == password:
+        return usuario
     return None
+
+
+def registrar_usuario(username: str, password: str, role: str = "estudiante", cedula: str = ""):
+    if not username or not password or usuarios_repo.existe_username(username):
+        return None
+    roles_actuales = {"alumno": "estudiante", "profesor": "tutor"}
+    role = roles_actuales.get(role.strip().lower(), role.strip().lower())
+    usuario = usuarios_repo.agregar(username, password, role, cedula)
+    return usuario["id"]

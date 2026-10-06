@@ -1,10 +1,12 @@
 class Students:
+    ESTADOS_VALIDOS = ("Habilitado", "Suspenso")
+
     def __init__(self, user_id, cedula, nombre, apellido, segundo_apellido,
                  curso, grado, genero, fecha_nacimiento, ciudad, direccion,
                  celular, email, centro_educativo, credencial_civica,
                  especialidad, centro_referencia, segundo_nombre=None):
 
-        # Atributos privados
+
         self.__user_id = user_id
         self.__cedula = cedula
         self.__nombre = nombre
@@ -23,9 +25,10 @@ class Students:
         self.__credencial_civica = credencial_civica
         self.__especialidad = especialidad
         self.__centro_referencia = centro_referencia
+        self.__estado = "Habilitado"
 
 
-    # GETTERS
+
 
     def get_user_id(self):
         return self.__user_id
@@ -81,8 +84,41 @@ class Students:
     def get_centro_referencia(self):
         return self.__centro_referencia
 
+    @property
+    def cedula(self):
+        return self.__cedula
 
-    # SETTERS - Datos que puede modificar el estudiante
+    @property
+    def nombre(self):
+        return self.__nombre
+
+    def get_estado(self):
+        return self.__estado
+
+    def cambiar_estado(self, estado):
+        if estado not in self.ESTADOS_VALIDOS:
+            return False
+        self.__estado = estado
+        return True
+
+    def mostrar_info(self):
+        nombre_completo = " ".join(
+            parte for parte in (
+                self.__nombre, self.__segundo_nombre, self.__apellido,
+                self.__segundo_apellido,
+            ) if parte
+        )
+        return (
+            f"{nombre_completo} (CI: {self.__cedula}) | "
+            f"Curso: {self.__curso} | Grado: {self.__grado} | "
+            f"Estado: {self.__estado}"
+        )
+
+    def __str__(self):
+        return self.mostrar_info()
+
+
+
 
     def set_cedula(self, cedula):
         self.__cedula = cedula
@@ -124,7 +160,7 @@ class Students:
         self.__especialidad = especialidad
 
 
-    # SETTERS - Datos que deben ser modificados administrativamente
+
 
     def set_curso(self, curso):
         self.__curso = curso

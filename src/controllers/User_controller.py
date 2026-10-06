@@ -1,28 +1,40 @@
-# User_controller.py
-import src.composables.User.auth as user_auth
+from src.composables.Usuarios.usuarios_repo import UsuariosRepo
 from src.utils.logs import error
-from src.models.users_class import Users  # importa tu clase Users
+
 
 class UserController:
     def __init__(self):
+        self.usuarios_repo = UsuariosRepo()
         self.current_user = None
 
     def user_existe(self, username: str) -> bool:
-        return user_auth.usuario_existe(username)
+        try:
+            return self.usuarios_repo.existe_username(username)
+        except (OSError, ValueError):
+            error("No se pudo leer el archivo de usuarios")
+            return False
 
     def login(self, username: str, password: str) -> bool:
-        usuario = user_auth.iniciar_sesion(username, password)
+        try:
+            usuario = self.usuarios_repo.obtener_por_username(username)
+        except (OSError, ValueError):
+            error("No se pudo leer el archivo de usuarios")
+            return False
 
-        if usuario:
-            self.current_user = Users(
-                user_id=usuario.get("id"),
-                username=usuario.get("user"),
-                password=usuario.get("pass"),
-                role=usuario.get("rol"),
-            )
+        if usuario and usuario.get("pass") == password:
+            self.current_user = {
+                key: value for key, value in usuario.items() if key != "pass"
+            }
             return True
-
         return False
+
+    def registrar_usuario(self, username: str, password: str, rol: str, cedula: str):
+        if not username or not password or self.user_existe(username):
+            return None
+        return self.usuarios_repo.agregar(username, password, rol, cedula)
 
     def get_current_user(self):
         return self.current_user
+
+    def logout(self):
+        self.current_user = None

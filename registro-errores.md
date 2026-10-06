@@ -1,6 +1,6 @@
 **Error #001** — Dependencia innecesaria de la librería Rich
 Módulos: Vistas del proyecto
-Estado: Solucionado (aún en Branch)
+Estado: Solucionado en main
 
 **Descripción:**
 Las interfaces del proyecto utilizaban componentes de la librería externa rich para mostrar mensajes y solicitar datos al usuario. Esto agregaba una dependencia externa que no era necesaria para el funcionamiento principal del programa.
@@ -15,7 +15,7 @@ Se decidió eliminar Rich de las vistas y utilizar únicamente herramientas inco
 
 **Error #002** — inicio_sesion.py todavía dependía de Rich
 Archivo: inicio_sesion.py
-Estado: Solucionado (aún en Branch)
+Estado: Solucionado en main
 
 **Descripción:**
 Después de decidir eliminar Rich, la vista de inicio de sesión todavía utilizaba elementos como Prompt.ask() y console.input(). Esto hacía que el proyecto continuara dependiendo de Rich para realizar el login.
@@ -30,7 +30,7 @@ Se modificó inicio_sesion.py reemplazando las entradas de Rich por input() y la
 
 **Error #003** — El flujo continuaba después de un inicio de sesión exitoso
 Archivo: inicio_sesion.py
-Estado: Solucionado (aún en Branch)
+Estado: Solucionado en main
 
 **Descripción:**
 Después de validar correctamente las credenciales de un usuario, la función podía continuar ejecutando instrucciones que ya no correspondían al flujo de inicio de sesión.
@@ -45,7 +45,7 @@ Se agregó el return correspondiente después de completar el inicio de sesión 
 
 **Error #004** — Falta de conexión entre el inicio de sesión y el registro de usuarios
 Archivos: inicio_sesion.py / registro_menu.py
-Estado: Solucionado (aún en Branch)
+Estado: Solucionado en main
 
 **Descripción:**
 Cuando se intentaba iniciar sesión con un usuario que todavía no estaba registrado, el programa no tenía correctamente integrado el acceso al proceso de creación de una nueva cuenta.
@@ -60,7 +60,7 @@ Se modificó el funcionamiento para permitir acceder al registro cuando el usuar
 
 **Error #005** — Falta de centralización del registro de usuarios
 Archivo: auth.py
-Estado: Solucionado (aún en Branch)
+Estado: Solucionado en main
 
 **Descripción:**
 El proyecto necesitaba una función encargada de registrar y almacenar correctamente los nuevos usuarios desde el sistema de autenticación.
@@ -77,7 +77,7 @@ De esta manera, el registro quedó conectado con el sistema utilizado por el pro
 
 **Error #006** — Dependencia de Rich en el sistema de logs
 Archivo: logs.py
-Estado: Identificado / Pendiente de revisión
+Estado: Solucionado
 
 **Descripción:**
 Durante el proceso de eliminación de Rich del proyecto se detectó que logs.py también contenía una dependencia relacionada con esta librería. Esto impedía considerar completamente eliminada la dependencia de Rich del proyecto.
@@ -86,4 +86,4 @@ Durante el proceso de eliminación de Rich del proyecto se detectó que logs.py 
 El sistema de logs había sido desarrollado utilizando componentes asociados a Rich.
 
 **Solución:**
-Se identificó logs.py como uno de los archivos que debía ser revisado para completar la eliminación de Rich. La modificación definitiva del sistema de logs quedó pendiente de revisión.
+Se reemplazó `RichHandler` por `logging.StreamHandler`, de la biblioteca estándar de Python. Los mensajes siguen mostrándose en consola y guardándose en `src/logs/app.log`, sin depender de Rich.
