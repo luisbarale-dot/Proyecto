@@ -75,8 +75,8 @@ class ProfesoresRepo:
             if registro.get("user_id") is not None
         }
         usuarios = usuarios_repo.cargar_todos()
-        hubo_cambios = False
-        for _, clave, registros in registros_por_fuente:
+        fuentes_modificadas = set()
+        for indice, (_, clave, registros) in enumerate(registros_por_fuente):
             for registro in registros:
                 if registro.get("user_id") is not None:
                     continue
@@ -96,18 +96,65 @@ class ProfesoresRepo:
                     continue
                 registro["user_id"] = user_id
                 cuentas_vinculadas.add(str(user_id))
-                hubo_cambios = True
+                fuentes_modificadas.add(indice)
 
-        if hubo_cambios:
-            for json_util, clave, registros in registros_por_fuente:
+        for indice, (json_util, clave, registros) in enumerate(registros_por_fuente):
+            if indice in fuentes_modificadas:
                 json_util.add_to_json_queue(clave, registros)
-        return hubo_cambios
+        return bool(fuentes_modificadas)
+
+    def migrar_instituciones(self, instituciones_repo):
+        instituciones = instituciones_repo.cargar_todos()
+        por_nombre = {}
+        for institucion in instituciones:
+            clave = institucion.get("nombre", "").strip().casefold()
+            por_nombre.setdefault(clave, []).append(institucion)
+
+        fuentes = [(self.json_adscriptos, CLAVE_ADSCRIPTOS)]
+        if self.json_adscriptos_legacy:
+            fuentes.append((self.json_adscriptos_legacy, "Adscriptores"))
+        cambios = []
+        for json_util, clave in fuentes:
+            registros = json_util.read().get(clave, [])
+            modificado = False
+            for registro in registros:
+                if registro.get("institucion_id") is not None:
+                    continue
+                nombre = str(registro.get("centro_educativo", "")).strip().casefold()
+                coincidencias = por_nombre.get(nombre, [])
+                if nombre and len(coincidencias) == 1:
+                    registro["institucion_id"] = coincidencias[0]["id"]
+                    modificado = True
+            if modificado:
+                cambios.append((json_util, clave, registros))
+        for json_util, clave, registros in cambios:
+            json_util.add_to_json_queue(clave, registros)
+        return bool(cambios)
 
     def existe_cedula(self, cedula):
         return any(
             r.get("cedula", r.get("ci", r.get("dni"))) == cedula
             for r in self.cargar_todos()
         )
+
+    def obtener_adscriptor(self, user_id):
+        for registro in self._cargar_adscriptos():
+            if str(registro.get("user_id")) == str(user_id):
+                return registro
+        return None
+
+    def actualizar_adscriptor(self, user_id, cambios):
+        fuentes = [(self.json_adscriptos, CLAVE_ADSCRIPTOS)]
+        if self.json_adscriptos_legacy:
+            fuentes.append((self.json_adscriptos_legacy, "Adscriptores"))
+        for json_util, clave in fuentes:
+            registros = json_util.read().get(clave, [])
+            for registro in registros:
+                if str(registro.get("user_id")) == str(user_id):
+                    registro.update(cambios)
+                    json_util.add_to_json_queue(clave, registros)
+                    return True
+        return False
 
     def agregar(self, registro):
         user_id = registro.get("user_id")

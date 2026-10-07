@@ -4,7 +4,7 @@ from src.views import inicio_sesion, registro_menu, menu_estudiante, menu_admin,
 
 def menu_home():
     while True:
-        print("\n===== GESTOR DE PRACTICAS DOCENTES =====")
+        print("\n===== GESTOR DE PRÁCTICAS DOCENTES =====")
         print("[1] Iniciar sesión")
         print("[2] Registrarse")
         print("[3] Salir")
@@ -28,7 +28,7 @@ def _enrutar_por_rol(usuario):
     if rol in ("estudiante", "alumno"):
         menu_estudiante.menu(usuario)
     elif rol == "admin":
-        menu_admin.menu()
+        menu_admin.menu(usuario)
     elif rol in ("adscriptor", "profesor"):
         menu_profesor.menu(usuario)
     else:

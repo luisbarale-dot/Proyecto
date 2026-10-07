@@ -85,6 +85,7 @@ class Adscriptor(Usuario):
     def __init__(
         self, user_id, nombre, apellido, cedula, username, password,
         centro_educativo=None, segundo_nombre="", segundo_apellido="",
+        institucion_id=None, max_alumnos=0,
     ):
         super().__init__(
             user_id, nombre, apellido, cedula, username, password,
@@ -92,6 +93,8 @@ class Adscriptor(Usuario):
             segundo_apellido=segundo_apellido,
         )
         self.centro_educativo = centro_educativo
+        self.institucion_id = institucion_id
+        self.max_alumnos = max_alumnos
         self.__disponible = True
         self.__estudiantes_a_cargo = []
 

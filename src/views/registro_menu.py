@@ -1,6 +1,7 @@
 from src.controllers.Students_controller import StudentsController
 from src.controllers.Professors__controller import ProfessorsController
 from src.controllers.User_controller import UserController
+from src.composables.Instituciones.instituciones_repo import InstitucionesRepo
 from src.utils.logs import error, success
 
 
@@ -63,12 +64,19 @@ def registro():
                 centro_referencia=centro_referencia,
             )
         elif tipo_usuario == "adscriptor":
+            instituciones = InstitucionesRepo().cargar_todos()
+            if not instituciones:
+                error("Todavía no hay instituciones registradas para asignar al adscriptor.")
+                return
+            print("Instituciones disponibles:")
+            for institucion in instituciones:
+                print(f"[{institucion['id']}] {institucion['nombre']}")
+            institucion_id = input("ID de la institución: ").strip()
             segundo_nombre = input("Segundo nombre (opcional): ").strip()
             segundo_apellido = input("Segundo apellido (opcional): ").strip()
-            centro = input("Centro educativo donde trabaja: ").strip()
             creado = professors_controller.alta_adscriptor(
-                nombre, apellido, cedula, username, password, centro,
-                segundo_nombre, segundo_apellido,
+                nombre, apellido, cedula, username, password, "",
+                segundo_nombre, segundo_apellido, institucion_id,
             )
         else:
             segundo_nombre = input("Segundo nombre (opcional): ").strip()

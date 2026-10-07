@@ -11,14 +11,14 @@ class UserController:
         try:
             return self.usuarios_repo.existe_username(username)
         except (OSError, ValueError):
-            error("No se pudo leer el archivo de usuarios")
+            error("No se pudo leer el archivo de usuarios.")
             return False
 
     def login(self, username: str, password: str) -> bool:
         try:
             usuario = self.usuarios_repo.obtener_por_username(username)
         except (OSError, ValueError):
-            error("No se pudo leer el archivo de usuarios")
+            error("No se pudo leer el archivo de usuarios.")
             return False
 
         if usuario and usuario.get("pass") == password:

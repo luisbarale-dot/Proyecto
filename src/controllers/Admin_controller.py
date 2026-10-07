@@ -2,12 +2,14 @@
 
 from src.controllers.Students_controller import StudentsController
 from src.controllers.Professors__controller import ProfessorsController
+from src.controllers.Practicas_controller import PracticasController
 
 
 class AdminController:
     def __init__(self):
         self.estudiantes = StudentsController()
         self.profesores = ProfessorsController()
+        self.practicas = PracticasController()
 
     def registrar_profesor(
         self, nombre, apellido, cedula, username, password, materia,
@@ -20,11 +22,11 @@ class AdminController:
 
     def registrar_adscriptor(
         self, nombre, apellido, cedula, username, password, centro,
-        segundo_nombre="", segundo_apellido="",
+        segundo_nombre="", segundo_apellido="", institucion_id=None,
     ):
         return self.profesores.alta_adscriptor(
             nombre, apellido, cedula, username, password, centro,
-            segundo_nombre, segundo_apellido,
+            segundo_nombre, segundo_apellido, institucion_id,
         )
 
     def registrar_estudiante(

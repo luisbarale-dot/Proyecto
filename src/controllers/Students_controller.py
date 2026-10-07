@@ -1,6 +1,7 @@
 from src.models.students_class import Students
 from src.composables.Usuarios.usuarios_repo import UsuariosRepo
 from src.composables.Estudiantes.estudiantes_repo import EstudiantesRepo
+from src.utils.arbol_binario_busqueda import ArbolBinarioBusqueda
 from src.utils.logs import info, error
 
 
@@ -54,16 +55,18 @@ class StudentsController:
         return estudiantes
 
     def buscar_por_cedula(self, cedula):
-        for estudiante in self.listar_estudiantes():
-            if estudiante.cedula == cedula:
-                return estudiante
-        return None
+        return self._indice_estudiantes("cedula").buscar(str(cedula))
 
     def buscar_por_user_id(self, user_id):
+        return self._indice_estudiantes("user_id").buscar(str(user_id))
+
+    def _indice_estudiantes(self, atributo):
+        indice = ArbolBinarioBusqueda()
         for estudiante in self.listar_estudiantes():
-            if str(estudiante.get_user_id()) == str(user_id):
-                return estudiante
-        return None
+            clave = getattr(estudiante, atributo)
+            if clave is not None:
+                indice.insertar(str(clave), estudiante)
+        return indice
 
     def alta_estudiante(
         self, nombre, apellido, cedula, username, password,
@@ -73,13 +76,13 @@ class StudentsController:
         credencial_civica="", centro_referencia="",
     ):
         if not all((nombre, apellido, cedula, username, password)):
-            error("Nombre, apellido, cédula, usuario y contraseña son obligatorios")
+            error("El nombre, el apellido, la cédula, el usuario y la contraseña son obligatorios.")
             return False
         if self.estudiantes_repo.existe_cedula(cedula) or self.usuarios_repo.existe_cedula(cedula):
-            error(f"Ya existe una persona con cedula {cedula}")
+            error(f"Ya existe una persona con la cédula {cedula}.")
             return False
         if self.usuarios_repo.existe_username(username):
-            error(f"El usuario {username} ya existe")
+            error(f"El usuario {username} ya existe.")
             return False
 
         usuario = self.usuarios_repo.agregar(username, password, "estudiante", cedula)
@@ -108,7 +111,7 @@ class StudentsController:
         except Exception:
             self.usuarios_repo.eliminar_por_id(usuario.get("id", usuario.get("user_id")))
             raise
-        info(f"Estudiante {nombre} {apellido} (CI {cedula}) dado de alta")
+        info(f"Estudiante {nombre} {apellido} (cédula {cedula}) registrado.")
         return True
 
     def baja_estudiante(self, cedula):
@@ -120,7 +123,7 @@ class StudentsController:
         )
         self.estudiantes_repo.eliminar(cedula)
         self.usuarios_repo.eliminar_por_id(perfil.get("user_id"))
-        info(f"Estudiante CI {cedula} dado de baja")
+        info(f"Estudiante con cédula {cedula} dado de baja.")
         return True
 
     def modificar_estudiante(self, cedula, **cambios):
