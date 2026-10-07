@@ -29,7 +29,7 @@ Desde esta carpeta, ejecutar:
 python main.py
 ```
 
-El menú permite iniciar sesión o registrarse. Los administradores pueden registrar estudiantes, profesores y adscriptores, además de consultar y administrar los registros. Los usuarios y perfiles se guardan en `src/data/JSON/Usuarios.json`, `Alumnos.json`, `Profesores.json` y `Adcriptos.json`.
+El menú permite iniciar sesión o registrarse. Los administradores pueden registrar estudiantes, profesores y adscriptores, además de consultar y administrar los registros. Los usuarios y perfiles se guardan en `src/data/JSON/Usuarios.json`, `Alumnos.json`, `Profesores.json` y `Adcriptos.json`. Cada perfil se vincula con su cuenta mediante `user_id`, que corresponde al `id` del usuario; la cédula queda como dato personal.
 
 Las cuentas que ya existen conservan su formato; los nuevos usuarios se guardan con un ID numérico y su rol.
 
