@@ -10,6 +10,7 @@ class ProfessorsController:
     def __init__(self):
         self.usuarios_repo = UsuariosRepo()
         self.profesores_repo = ProfesoresRepo()
+        self.profesores_repo.migrar_user_ids(self.usuarios_repo)
 
     def _armar_profesor(self, datos_usuario, datos_prof):
         cedula = datos_prof.get("cedula", datos_prof.get("ci", datos_prof.get("dni", "")))
@@ -46,12 +47,8 @@ class ProfessorsController:
         for datos_prof in self.profesores_repo.cargar_todos():
             if tipo and datos_prof["tipo"] != tipo:
                 continue
-            cedula = datos_prof.get("cedula", datos_prof.get("ci", datos_prof.get("dni")))
-            datos_user = (
-                self.usuarios_repo.obtener_por_cedula(cedula)
-                or self.usuarios_repo.obtener_por_id(datos_prof.get("user_id"))
-            )
-            if datos_user:
+            datos_user = self.usuarios_repo.obtener_por_id(datos_prof.get("user_id"))
+            if datos_user and str(datos_user.get("rol", "")).lower() == datos_prof["tipo"]:
                 resultado.append(self._armar_profesor(datos_user, datos_prof))
         return resultado
 
@@ -85,15 +82,16 @@ class ProfessorsController:
                 or self.usuarios_repo.existe_username(username)):
             error("Ya existe un profesor con esa cedula o usuario")
             return False
-        self.usuarios_repo.agregar(username, password, "adscriptor", cedula)
+        usuario = self.usuarios_repo.agregar(username, password, "adscriptor", cedula)
         try:
             self.profesores_repo.agregar({
+                "user_id": usuario["id"],
                 "cedula": cedula, "nombre": nombre, "apellido": apellido,
                 "segundo_nombre": segundo_nombre, "segundo_apellido": segundo_apellido,
                 "tipo": "adscriptor", "centro_educativo": centro_educativo, "disponible": True,
             })
         except Exception:
-            self.usuarios_repo.eliminar_por_cedula(cedula)
+            self.usuarios_repo.eliminar_por_id(usuario["id"])
             raise
         info(f"Adscriptor {nombre} {apellido} dado de alta")
         return True
@@ -110,15 +108,16 @@ class ProfessorsController:
                 or self.usuarios_repo.existe_username(username)):
             error("Ya existe un profesor con esa cedula o usuario")
             return False
-        self.usuarios_repo.agregar(username, password, "profesor", cedula)
+        usuario = self.usuarios_repo.agregar(username, password, "profesor", cedula)
         try:
             self.profesores_repo.agregar({
+                "user_id": usuario["id"],
                 "cedula": cedula, "nombre": nombre, "apellido": apellido,
                 "segundo_nombre": segundo_nombre, "segundo_apellido": segundo_apellido,
                 "tipo": "profesor", "course": materia,
             })
         except Exception:
-            self.usuarios_repo.eliminar_por_cedula(cedula)
+            self.usuarios_repo.eliminar_por_id(usuario["id"])
             raise
         info(f"Profesor {nombre} {apellido} dado de alta")
         return True

@@ -13,14 +13,9 @@ def menu(usuario):
         opcion = input("Seleccione una opcion: ").strip()
 
         if opcion == "1":
-            estudiante = None
-            cedula = usuario.get("cedula")
-            if cedula:
-                estudiante = students_controller.buscar_por_cedula(cedula)
-            if estudiante is None:
-                estudiante = students_controller.buscar_por_user_id(
-                    usuario.get("id", usuario.get("user_id")),
-                )
+            estudiante = students_controller.buscar_por_user_id(
+                usuario.get("id", usuario.get("user_id")),
+            )
             print("\n" + estudiante.mostrar_info() if estudiante else "No se encontraron datos del estudiante.")
         elif opcion == "2":
             return

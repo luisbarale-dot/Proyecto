@@ -51,6 +51,58 @@ class ProfesoresRepo:
     def cargar_todos(self):
         return self._cargar_adscriptos() + self._cargar_profesores()
 
+    def migrar_user_ids(self, usuarios_repo):
+        fuentes = [
+            (self.json_adscriptos, CLAVE_ADSCRIPTOS),
+            (self.json_profesores, CLAVE_PROFESORES),
+        ]
+        if self.json_adscriptos_legacy:
+            fuentes.append((self.json_adscriptos_legacy, "Adscriptores"))
+
+        registros_por_fuente = [
+            (json_util, clave, json_util.read().get(clave, []))
+            for json_util, clave in fuentes
+        ]
+        todos = [registro for _, _, registros in registros_por_fuente for registro in registros]
+        perfiles_por_cedula = {}
+        for registro in todos:
+            cedula = registro.get("cedula", registro.get("ci", registro.get("dni")))
+            perfiles_por_cedula[cedula] = perfiles_por_cedula.get(cedula, 0) + 1
+
+        cuentas_vinculadas = {
+            str(registro["user_id"])
+            for registro in todos
+            if registro.get("user_id") is not None
+        }
+        usuarios = usuarios_repo.cargar_todos()
+        hubo_cambios = False
+        for _, clave, registros in registros_por_fuente:
+            for registro in registros:
+                if registro.get("user_id") is not None:
+                    continue
+                cedula = registro.get("cedula", registro.get("ci", registro.get("dni")))
+                tipo = "adscriptor" if clave in (CLAVE_ADSCRIPTOS, "Adscriptores") else "profesor"
+                roles = ("adscriptor",) if tipo == "adscriptor" else ("profesor",)
+                coincidencias = [
+                    usuario for usuario in usuarios
+                    if usuario.get("cedula") == cedula
+                    and str(usuario.get("rol", "")).lower() in roles
+                ]
+                if len(coincidencias) != 1 or perfiles_por_cedula.get(cedula) != 1:
+                    continue
+                usuario = coincidencias[0]
+                user_id = usuario.get("id", usuario.get("user_id"))
+                if user_id is None or str(user_id) in cuentas_vinculadas:
+                    continue
+                registro["user_id"] = user_id
+                cuentas_vinculadas.add(str(user_id))
+                hubo_cambios = True
+
+        if hubo_cambios:
+            for json_util, clave, registros in registros_por_fuente:
+                json_util.add_to_json_queue(clave, registros)
+        return hubo_cambios
+
     def existe_cedula(self, cedula):
         return any(
             r.get("cedula", r.get("ci", r.get("dni"))) == cedula
@@ -58,6 +110,14 @@ class ProfesoresRepo:
         )
 
     def agregar(self, registro):
+        user_id = registro.get("user_id")
+        if user_id is None:
+            raise ValueError("El perfil de profesor requiere user_id")
+        if any(
+            str(r.get("user_id")) == str(user_id)
+            for r in self.cargar_todos()
+        ):
+            raise ValueError(f"Ya existe un perfil para user_id {user_id}")
         if registro["tipo"] == "adscriptor":
             registros = self._cargar_adscriptos()
             registros.append(registro)

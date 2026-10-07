@@ -2,6 +2,7 @@
     "Alumnos": [
         {
             "cedula": "52111",
+            "user_id": 3,
             "nombre": "Adios",
             "apellido": "Tercero",
             "especialidad": "Minecraft",

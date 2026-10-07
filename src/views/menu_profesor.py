@@ -13,11 +13,6 @@ def menu(usuario):
 
 
 def _buscar_profesor(usuario):
-    cedula = usuario.get("cedula")
-    if cedula:
-        profesor = profesores_controller.buscar_por_cedula(cedula)
-        if profesor:
-            return profesor
     user_id = usuario.get("id", usuario.get("user_id"))
     return profesores_controller.buscar_por_user_id(user_id)
 

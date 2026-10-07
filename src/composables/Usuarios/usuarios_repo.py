@@ -29,12 +29,6 @@ class UsuariosRepo:
                 return u
         return None
 
-    def obtener_por_cedula(self, cedula):
-        for u in self.cargar_todos():
-            if u.get("cedula") == cedula:
-                return u
-        return None
-
     def obtener_por_id(self, user_id):
         for usuario in self.cargar_todos():
             current_id = usuario.get("id", usuario.get("user_id"))
@@ -43,7 +37,7 @@ class UsuariosRepo:
         return None
 
     def existe_cedula(self, cedula):
-        return self.obtener_por_cedula(cedula) is not None
+        return any(usuario.get("cedula") == cedula for usuario in self.cargar_todos())
 
     def siguiente_id(self):
         usuarios = self.cargar_todos()
@@ -77,10 +71,6 @@ class UsuariosRepo:
                 self.guardar_todos(usuarios)
                 return True
         return False
-
-    def eliminar_por_cedula(self, cedula):
-        usuarios = [u for u in self.cargar_todos() if u.get("cedula") != cedula]
-        self.guardar_todos(usuarios)
 
     def eliminar_por_id(self, user_id):
         if user_id is None:

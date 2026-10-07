@@ -8,6 +8,7 @@ class StudentsController:
     def __init__(self):
         self.usuarios_repo = UsuariosRepo()
         self.estudiantes_repo = EstudiantesRepo()
+        self.estudiantes_repo.migrar_user_ids(self.usuarios_repo)
 
     @staticmethod
     def _valor(registro, actual, legado=None):
@@ -43,12 +44,12 @@ class StudentsController:
     def listar_estudiantes(self):
         estudiantes = []
         for datos_estudiante in self.estudiantes_repo.cargar_todos():
-            cedula = self._valor(datos_estudiante, "cedula", "ci")
-            datos_usuario = (
-                self.usuarios_repo.obtener_por_cedula(cedula)
-                or self.usuarios_repo.obtener_por_id(datos_estudiante.get("user_id"))
+            datos_usuario = self.usuarios_repo.obtener_por_id(
+                datos_estudiante.get("user_id"),
             )
-            if datos_usuario:
+            if datos_usuario and str(datos_usuario.get("rol", "")).lower() in (
+                "estudiante", "alumno",
+            ):
                 estudiantes.append(self._armar_estudiante(datos_usuario, datos_estudiante))
         return estudiantes
 
@@ -105,7 +106,7 @@ class StudentsController:
                 "estado": "Habilitado",
             })
         except Exception:
-            self.usuarios_repo.eliminar_por_cedula(cedula)
+            self.usuarios_repo.eliminar_por_id(usuario.get("id", usuario.get("user_id")))
             raise
         info(f"Estudiante {nombre} {apellido} (CI {cedula}) dado de alta")
         return True
@@ -118,7 +119,6 @@ class StudentsController:
             if registro.get("cedula", registro.get("ci")) == cedula
         )
         self.estudiantes_repo.eliminar(cedula)
-        self.usuarios_repo.eliminar_por_cedula(cedula)
         self.usuarios_repo.eliminar_por_id(perfil.get("user_id"))
         info(f"Estudiante CI {cedula} dado de baja")
         return True
