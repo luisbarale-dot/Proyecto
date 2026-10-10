@@ -46,7 +46,7 @@ def _menu_practicas(usuario):
                 estudiante.get_grado() if estudiante else None,
             )
             if not categoria:
-                error("El año del estudiante no corresponde a las prácticas disponibles.")
+                error("Las prácticas disponibles son para segundo/tercero y cuarto año. Verifica el año registrado en tu perfil.")
                 continue
             print(f"Tipo de práctica correspondiente: {practicas_controller.TIPOS_PRACTICA[categoria]}")
             instituciones = practicas_controller.instituciones_con_cupo(categoria)

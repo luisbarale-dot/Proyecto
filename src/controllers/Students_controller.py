@@ -63,7 +63,12 @@ class StudentsController:
     def _indice_estudiantes(self, atributo):
         indice = ArbolBinarioBusqueda()
         for estudiante in self.listar_estudiantes():
-            clave = getattr(estudiante, atributo)
+            if atributo == "user_id":
+                clave = estudiante.get_user_id()
+            elif atributo == "cedula":
+                clave = estudiante.get_cedula()
+            else:
+                raise ValueError(f"Campo no indexable: {atributo}")
             if clave is not None:
                 indice.insertar(str(clave), estudiante)
         return indice

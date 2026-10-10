@@ -73,7 +73,8 @@ def _buscar_personas():
         else controlador.buscar_por_user_id(termino)
     )
     roles_esperados = {"1": "estudiante", "2": "profesor", "3": "adscriptor"}
-    if persona and persona.rol != roles_esperados[tipo]:
+    rol_persona = getattr(persona, "rol", "estudiante" if tipo == "1" else None)
+    if persona and rol_persona != roles_esperados[tipo]:
         persona = None
     if persona:
         print(f"Resultado: {persona}")
