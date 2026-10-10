@@ -1,1 +1,12 @@
-{"Instituciones": []}
+{
+    "Instituciones": [
+        {
+            "id": 1,
+            "nombre": "Hola",
+            "cupos": {
+                "segundo_tercero": 2,
+                "cuarto": 0
+            }
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "Adscriptos": [
+        {
+            "user_id": 5,
+            "cedula": "5222222",
+            "nombre": "Jorge",
+            "apellido": "Adios",
+            "segundo_nombre": "Hola",
+            "segundo_apellido": "Quetal",
+            "tipo": "adscriptor",
+            "centro_educativo": "Hola",
+            "institucion_id": 1,
+            "max_alumnos": 3,
+            "disponible": true
+        }
+    ]
+}

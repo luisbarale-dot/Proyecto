@@ -11,6 +11,27 @@
             "celular": "Roca",
             "anio": "1",
             "estado": "Habilitado"
+        },
+        {
+            "user_id": 4,
+            "cedula": "52110126",
+            "nombre": "Federico",
+            "segundo_nombre": "Joaquin",
+            "apellido": "Carrizo",
+            "segundo_apellido": "Klein",
+            "curso": "Informatica",
+            "grado": "2",
+            "genero": "Masculino",
+            "fecha_nacimiento": "18/07/2001",
+            "ciudad": "Paysandu",
+            "direccion": "Tatata",
+            "celular": "0999999",
+            "email": "sadkjasd@gmail.com",
+            "centro_educativo": "IFD",
+            "credencial_civica": "d",
+            "especialidad": "Informatica",
+            "centro_referencia": "CERP",
+            "estado": "Habilitado"
         }
     ]
 }

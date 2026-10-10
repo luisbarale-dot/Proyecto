@@ -1,1 +1,13 @@
-{"Solicitudes": []}
+{
+    "Solicitudes": [
+        {
+            "id": 1,
+            "student_user_id": 4,
+            "institucion_id": 1,
+            "tipo_practica": "segundo_tercero",
+            "estado": "aceptada",
+            "adscriptor_user_id": 5,
+            "revisado_por_user_id": 5
+        }
+    ]
+}

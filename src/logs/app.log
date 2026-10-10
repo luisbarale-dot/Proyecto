@@ -69,3 +69,23 @@
 2026-10-06 18:18:54 | INFO | gestor-practicas | ✅ Usuario hola registrado como estudiante.
 2026-10-07 16:30:22 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor.
 2026-10-07 16:34:26 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor.
+2026-10-09 22:50:11 | INFO | gestor-practicas | ℹ️ Estudiante Federico Carrizo (cédula 52110126) registrado.
+2026-10-09 22:50:11 | INFO | gestor-practicas | ✅ Usuario Federico registrado como estudiante.
+2026-10-09 22:50:18 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido Federico.
+2026-10-09 22:51:09 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor.
+2026-10-09 22:51:34 | ERROR | gestor-practicas | ❌ Criterio de búsqueda no válido.
+2026-10-09 22:53:10 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe o no se pudo leer el archivo de usuarios.
+2026-10-09 22:53:19 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor.
+2026-10-09 22:53:58 | INFO | gestor-practicas | ✅ Institución Hola registrada.
+2026-10-09 22:54:36 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido Federico.
+2026-10-09 22:54:45 | INFO | gestor-practicas | ✅ Solicitud enviada; queda pendiente de aceptación por un adscriptor.
+2026-10-09 22:55:22 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor.
+2026-10-09 22:56:29 | INFO | gestor-practicas | ℹ️ Adscriptor Jorge Adios registrado.
+2026-10-09 22:56:29 | INFO | gestor-practicas | ✅ Registro de adscriptor completado.
+2026-10-09 22:56:55 | ERROR | gestor-practicas | ❌ El usuario ingresado no existe o no se pudo leer el archivo de usuarios.
+2026-10-09 22:57:02 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido Hola1.
+2026-10-09 22:57:42 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido imnotkonnor.
+2026-10-09 22:58:06 | INFO | gestor-practicas | ✅ Máximo de alumnos actualizado.
+2026-10-09 22:58:15 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido Hola1.
+2026-10-09 22:58:20 | INFO | gestor-practicas | ✅ Solicitud aceptada.
+2026-10-09 22:58:37 | INFO | gestor-practicas | ✅ Inicio de sesión exitoso. Bienvenido Federico.

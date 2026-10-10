@@ -18,6 +18,20 @@
             "pass": "1234",
             "rol": "estudiante",
             "cedula": "52111"
+        },
+        {
+            "id": 4,
+            "user": "Federico",
+            "pass": "admin",
+            "rol": "estudiante",
+            "cedula": "52110126"
+        },
+        {
+            "id": 5,
+            "user": "Hola1",
+            "pass": "hola1",
+            "rol": "adscriptor",
+            "cedula": "5222222"
         }
     ]
 }

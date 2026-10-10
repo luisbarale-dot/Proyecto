@@ -1,1 +1,12 @@
-{"Seguimientos": []}
+{
+    "Seguimientos": [
+        {
+            "solicitud_id": 1,
+            "student_user_id": 4,
+            "faltas": 0,
+            "nota_final": null,
+            "estado": "En curso",
+            "debe_recursar": false
+        }
+    ]
+}
